@@ -379,61 +379,6 @@ if(!function_exists('polmo_lite_comment')){
 
 } 
 
-if ( ! function_exists( 'polmo_lite_slider_scripts' ) ) {
-	function polmo_lite_slider_scripts(){
-		if (is_page() && basename(get_page_template()) == "front-page.php") { ?>
-			<script>
-				
-				!function(e){"use strict";e(".bxslider").bxSlider({auto:!0,preloadImages:"all",mode:"horizontal",captions:!1,controls:!0,pause:4e3,speed:1200,onSliderLoad:function(){e(".bxslider>li .slide-inner").eq(1).addClass("active-slide"),e(".slide-inner.active-slide .slider-title").addClass("wow animated bounceInDown"),e(".slide-inner.active-slide .slide-description").addClass("wow animated bounceInRight"),e(".slide-inner.active-slide .btn").addClass("wow animated zoomInUp")},onSlideAfter:function(i,n,t){console.log(t),e(".active-slide").removeClass("active-slide"),e(".bxslider>li .slide-inner").eq(t+1).addClass("active-slide"),e(".slide-inner.active-slide").addClass("wow animated bounceInRight")},onSlideBefore:function(){e(".slide-inner.active-slide").removeClass("wow animated bounceInRight"),e(".one.slide-inner.active-slide").removeAttr("style")}}),e(document).ready(function(){function i(){return"ontouchstart"in document.documentElement}function n(){if("undefined"!=typeof google){var n={center:[-37.817331,144.955652],zoom:15,mapTypeControl:!0,mapTypeControlOptions:{style:google.maps.MapTypeControlStyle.DROPDOWN_MENU},navigationControl:!0,scrollwheel:!1,streetViewControl:!0};i()&&(n.draggable=!1),e("#googleMaps").gmap3({map:{options:n},marker:{latLng:[23.709921,90.407143],options:{icon:"images/mapicon.png"}}})}}e("#masthead #main-menu").onePageNav(),n()}),e("#contactform").on("submit",function(i){i.preventDefault(),$this=e(this),e.ajax({type:"POST",url:$this.attr("action"),data:$this.serialize(),success:function(){alert("Message Sent Successfully")}})})}(jQuery);
-				
-
-				// ! function(e) {
-				// 	"use strict";
-				// 	e(".bxslider").bxSlider({
-				// 		auto: !0,
-				// 		preloadImages: "all",
-				// 		mode: "horizontal",
-				// 		captions: !1,
-				// 		controls: !0,
-				// 		pause: 4e3,
-				// 		speed: 1200,
-				// 		onSliderLoad: function() {
-				// 			e(".bxslider>li .slide-inner").eq(1).addClass("active-slide"), e(".slide-inner.active-slide .slider-title").addClass("wow animated bounceInDown"), e(".slide-inner.active-slide .slide-description").addClass("wow animated bounceInRight"), e(".slide-inner.active-slide .btn").addClass("wow animated zoomInUp")
-				// 		},
-				// 		onSlideAfter: function(i, n, t) {
-				// 			console.log(t), e(".active-slide").removeClass("active-slide"), e(".bxslider>li .slide-inner").eq(t + 1).addClass("active-slide"), e(".slide-inner.active-slide").addClass("wow animated bounceInRight")
-				// 		},
-				// 		onSlideBefore: function() {
-				// 			e(".slide-inner.active-slide").removeClass("wow animated bounceInRight"), e(".one.slide-inner.active-slide").removeAttr("style")
-				// 		}
-				// 	}), e(document).ready(function() {
-				// 		function i() {
-				// 			return "ontouchstart" in document.documentElement
-				// 		}
-
-
-				// 		e("#masthead #main-menu").onePageNav(), n()
-				// 	}), e("#contactform").on("submit", function(i) {
-				// 		i.preventDefault(), $this = e(this), e.ajax({
-				// 			type: "POST",
-				// 			url: $this.attr("action"),
-				// 			data: $this.serialize(),
-				// 			success: function() {
-				// 				alert("Message Sent Successfully")
-				// 			}
-				// 		})
-				// 	})
-				// }(jQuery);
-
-		  </script>
-		<?php }
-	}
-}
-
-// Slider Footer Scripts
-add_action('wp_footer','polmo_lite_slider_scripts',100);
-
-
 
 
 

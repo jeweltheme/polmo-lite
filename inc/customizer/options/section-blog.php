@@ -19,7 +19,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', [
 	'settings'    => 'blog_header_section',
 	'label'       => esc_html__( 'Header Section?', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_blog_index',
-	'default'     => '1',
+	'default'     => '0',
 	'priority'    => 10,
 	'choices'     => [
 		'on'  => esc_html__( 'Show', 'polmo-lite' ),
@@ -55,6 +55,42 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', [
         ),
 	),
 ] );
+
+Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
+	'type'        => 'textarea',
+	'settings'    => 'polmo_lite_general_blog_title',
+	'label'       => __( 'Blog Title', 'polmo-lite' ),
+	'description' => __( 'Leave empty for No Title', 'polmo-lite' ),
+	'section'     => 'polmo_lite_section_blog_index',
+	'default'     => __( 'Welcome To <span>Polmo</span> Blog', 'polmo-lite' ),
+	'sanitize_callback' => 'sanitize_text_field',
+	'priority'    => 10,
+    'required'  => array(
+        array(
+            'setting'  => 'blog_header_section',
+            'value'    => true,
+            'operator' => '==',
+        ),
+	),		
+) );
+
+Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
+	'type'        => 'textarea',
+	'settings'    => 'polmo_lite_general_blog_desc',
+	'label'       => __( 'Blog Description', 'polmo-lite' ),
+	'description' => __( 'Leave empty for No Description', 'polmo-lite' ),
+	'section'     => 'polmo_lite_section_blog_index',
+	'default'     => __( 'Our Creative Blog Will keep you always Updated', 'polmo-lite' ),
+	'sanitize_callback' => 'sanitize_text_field',
+	'priority'    => 10,
+    'required'  => array(
+        array(
+            'setting'  => 'blog_header_section',
+            'value'    => true,
+            'operator' => '==',
+        ),
+	),		
+) );
 
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'type'        => 'radio',

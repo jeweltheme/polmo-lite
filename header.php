@@ -67,10 +67,14 @@
 	</header><!-- /#masthead -->
 
 <?php
-$polmo_lite_general_blog_title = get_theme_mod('polmo_lite_general_blog_title','');
-$polmo_lite_general_blog_desc = get_theme_mod('polmo_lite_general_blog_desc', '');
+$blog_header_section = Polmo_Lite_Kirki::get_option('polmo_lite','blog_header_section');
+$polmo_lite_general_blog_title = Polmo_Lite_Kirki::get_option('polmo_lite','polmo_lite_general_blog_title');
+$polmo_lite_general_blog_desc = Polmo_Lite_Kirki::get_option('polmo_lite','polmo_lite_general_blog_desc');
+$polmo_lite_banner_image = Polmo_Lite_Kirki::get_option('polmo_lite','polmo_lite_banner_image');
 
-?>
+
+if( true == $blog_header_section){ ?>
+
 	<section id="page-head" class="page-head text-center" data-stellar-background-ratio="0.1" data-stellar-vertical-offset="0">
 		<div class="head-overlay">
 			<div class="section-padding">
@@ -85,6 +89,8 @@ $polmo_lite_general_blog_desc = get_theme_mod('polmo_lite_general_blog_desc', ''
 			</div><!-- /.section-padding -->
 		</div><!-- /.head-overlay -->
 	</section><!-- /#page-head -->
+
+<?php } ?>
 
 	<section id="main-content" class="main-content">
 		<div class="container">

@@ -712,7 +712,6 @@ h1.navbar-brand {
     padding: 22px 0;
 }
 .blog .entry-title {
-    font-size: 1em;
     font-weight: 700;
 }
 .blog .entry-title a {
@@ -889,7 +888,7 @@ h1.navbar-brand {
 /* 13 ----- Main Content Styles ------*/
 
 .main-content {
-    padding-top: 80px;
+    padding-top: 180px;
 }
 .main-content article {
     border-bottom: 1px solid #e8e8e8;
@@ -967,6 +966,9 @@ h1.navbar-brand {
 }
 .post-meta a:hover {
     color: #e74c3c;
+}
+.entry-meta>div{
+    padding-right: 15px;
 }
 .entry-meta .comments{
     margin-left: 60px;

@@ -3,11 +3,16 @@
  * Load Core Files
  *
 
+/* Template Functions */
+require PROWPTHEME_PATH . 'template-functions.php';
+
+
 /**
  * Upgrade to pro
  */
 require PROWPTHEME_PATH . 'upsell/class-customize.php';
 require PROWPTHEME_PATH . 'dynamic-css.php';
+
 
 /**
  * Theme Info

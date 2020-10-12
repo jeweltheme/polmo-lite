@@ -32,7 +32,7 @@
 		</div><!-- /.post-thumbnail -->
 		<p class="entry-content">
 			<?php the_excerpt(); ?>
-			<a class="read-more" href="<?php the_permalink();?>"><?php echo esc_attr('Read More...','polmo-lite');?></a>
+
 		</p><!-- /.entry-content -->
 
 		<?php 

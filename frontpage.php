@@ -3,14 +3,5 @@
 Template name: Front Page
 */
 get_header('home'); 
-
-	get_template_part( 'sections/sections-slider' );
-	get_template_part( 'sections/sections-service' );
-	get_template_part( 'sections/sections-about' );
-	get_template_part( 'sections/sections-subscribe' );
-	get_template_part( 'sections/sections-portfolio' );
-	get_template_part( 'sections/sections-blog' );
-	get_template_part( 'sections/sections-testimonial' );
-	get_template_part( 'sections/sections-contact' );
-
+the_content();
 get_footer('home');
