@@ -142,7 +142,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'type'        => 'checkbox',
 	'settings'    => 'polmo_lite_blog_meta',
-	'label'       => esc_attr__( 'Hide All Meta?', 'polmo-lite' ),
+	'label'       => esc_attr__( 'Show/Hide Meta\'s', 'polmo-lite' ),
 	'description' => __('Check to hide the date, category, tags etc on blog page.', 'polmo-lite'),
 	'section'     => 'polmo_lite_section_blog_index',
 	'default'     => '0',

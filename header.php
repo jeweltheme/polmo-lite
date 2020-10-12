@@ -92,6 +92,21 @@ if( true == $blog_header_section){ ?>
 
 <?php } ?>
 
+
+<?php 
+$polmo_lite_breadcrumbs = Polmo_Lite_Kirki::get_option('polmo_lite','polmo_lite_breadcrumbs');
+if ( $polmo_lite_breadcrumbs == '' ){ ?>
+	<section class="polmo-lite-page background-bg">
+	    <div class="polmo-lite-gray-bg">
+	        <div class="section-padding">
+	            <div class="container">
+	                <?php brooklyn_lite_breadcrumb_trail();?>
+	            </div><!-- /.container -->
+	        </div><!-- /.section-padding -->
+	    </div><!-- /.overlay -->
+	</section>
+<?php } ?>
+
 	<section id="main-content" class="main-content">
 		<div class="container">
 			<div class="row">

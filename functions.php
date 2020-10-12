@@ -18,6 +18,10 @@ define('JWJS', get_template_directory_uri().'/assets/js/');
 define('JWT_FEATURED_EMAGE','https://www.youtube.com/watch?v=qZ92n79Ul5A');
 
 
+if (!defined('POLMO_LITE_PATH')) {
+	define( 'POLMO_LITE_PATH', get_template_directory());
+}
+
 if (!defined('POLMO_LITE_THEME_URI')) {
 	define( 'POLMO_LITE_THEME_URI', get_template_directory_uri());
 }
@@ -402,6 +406,9 @@ function polmo_lite_starter_content() {
 add_action( 'after_setup_theme', 'polmo_lite_starter_content' );
 
 
+
+/* Breadcrumb Trail */
+require POLMO_LITE_PATH . '/inc/breadcrumb-trail.php';
 
 /* ProWP Theme Core */
 require PROWPTHEME_PATH . 'pwpt-core.php';
