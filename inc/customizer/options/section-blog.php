@@ -112,7 +112,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'settings'    => 'polmo_lite_blog_excerpt',
 	'label'       => esc_attr__( 'Excerpt length', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_blog_index',
-	'default'     => 20,
+	'default'     => 45,
 	'priority'    => 10,
 	'choices'     => array(
 		'min'  => 5,
@@ -127,7 +127,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'label'       => esc_attr__( 'Read more text', 'polmo-lite' ),
 	'description' => esc_attr__( 'Leave empty to hide', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_blog_index',
-	'default'     => esc_attr__( 'Read more', 'polmo-lite' ),
+	'default'     => esc_attr__( 'Read More', 'polmo-lite' ),
 	'sanitize_callback' => 'sanitize_text_field',
 	'priority'    => 10,
     'required'  => array(
@@ -178,36 +178,36 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
         ),
 	),	
 ) );
-Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
-	'type'        => 'checkbox',
-	'settings'    => 'index_hide_cats',
-	'label'       => esc_attr__( 'Hide post categories?', 'polmo-lite' ),
-	'section'     => 'polmo_lite_section_blog_index',
-	'default'     => '0',
-	'priority'    => 10,
-    'required'  => array(
-        array(
-            'setting'  => 'polmo_lite_blog_meta',
-            'value'    => '1',
-            'operator' => '==',
-        ),
-	),	
-) );
-Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
-	'type'        => 'checkbox',
-	'settings'    => 'index_hide_tags',
-	'label'       => esc_attr__( 'Hide post Tags?', 'polmo-lite' ),
-	'section'     => 'polmo_lite_section_blog_index',
-	'default'     => '0',
-	'priority'    => 10,
-    'required'  => array(
-        array(
-            'setting'  => 'polmo_lite_blog_meta',
-            'value'    => '1',
-            'operator' => '==',
-        ),
-	),	
-) );
+// Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
+// 	'type'        => 'checkbox',
+// 	'settings'    => 'index_hide_cats',
+// 	'label'       => esc_attr__( 'Hide post categories?', 'polmo-lite' ),
+// 	'section'     => 'polmo_lite_section_blog_index',
+// 	'default'     => '0',
+// 	'priority'    => 10,
+//     'required'  => array(
+//         array(
+//             'setting'  => 'polmo_lite_blog_meta',
+//             'value'    => '1',
+//             'operator' => '==',
+//         ),
+// 	),	
+// ) );
+// Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
+// 	'type'        => 'checkbox',
+// 	'settings'    => 'index_hide_tags',
+// 	'label'       => esc_attr__( 'Hide post Tags?', 'polmo-lite' ),
+// 	'section'     => 'polmo_lite_section_blog_index',
+// 	'default'     => '0',
+// 	'priority'    => 10,
+//     'required'  => array(
+//         array(
+//             'setting'  => 'polmo_lite_blog_meta',
+//             'value'    => '1',
+//             'operator' => '==',
+//         ),
+// 	),	
+// ) );
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'type'        => 'checkbox',
 	'settings'    => 'index_hide_author',

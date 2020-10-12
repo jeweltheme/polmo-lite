@@ -255,40 +255,52 @@ add_action( 'edit_category', 'polmo_lite_category_transient_flusher' );
 add_action( 'save_post',     'polmo_lite_category_transient_flusher' );
 
 
-function polmo_lite_post_meta(){ ?>
+function polmo_lite_post_meta(){ 
+	$index_hide_author = Polmo_Lite_Kirki::get_option('polmo_lite','index_hide_author');
+	$index_hide_comments = Polmo_Lite_Kirki::get_option('polmo_lite','index_hide_comments');
+	?>
+
 	<div class="post-meta">
 		<div class="entry-meta">
-			<div class="author pull-left">
-				<?php echo sprintf(
-					esc_html_x( 'by %s', 'post author', 'polmo-lite' ),
-					'<span class="author-name"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-					);
-					?>
-			</div><!-- /.author -->
-			<div class="comments">
-				<span class="comments-icon"><i class="fa fa-comments"></i></span>
+			
+			<?php if ( $index_hide_author == '' ){ ?>
+				<div class="author pull-left">
+					<?php echo sprintf(
+						esc_html_x( 'by %s', 'post author', 'polmo-lite' ),
+						'<span class="author-name"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+						);
+						?>
+				</div><!-- /.author -->
+			<?php } ?>
 
-				<?php
-				$num_comments = get_comments_number(); // get_comments_number returns only a numeric value
+			<?php if ( $index_hide_comments == '' ){ ?>
+				<div class="comments">
+					<span class="comments-icon"><i class="fa fa-comments"></i></span>
 
-				if ( comments_open() ) {
-					if ( $num_comments == 0 ) {
-						$comments = __('No Comments', 'polmo-lite');
-					} elseif ( $num_comments > 1 ) {
-						$comments = $num_comments . __(' Comments','polmo-lite');
+					<?php
+					$num_comments = get_comments_number(); // get_comments_number returns only a numeric value
+
+					if ( comments_open() ) {
+						if ( $num_comments == 0 ) {
+							$comments = __('No Comments', 'polmo-lite');
+						} elseif ( $num_comments > 1 ) {
+							$comments = $num_comments . __(' Comments','polmo-lite');
+						} else {
+							$comments = __('1 Comment','polmo-lite');
+						}
+						echo wp_kses( $write_comments = '<span class="count">'. $comments .'</span>', 'polmo-lite' ) ;
 					} else {
-						$comments = __('1 Comment','polmo-lite');
+						echo esc_html( $write_comments =  __('Comments off','polmo-lite') );
 					}
-					echo wp_kses( $write_comments = '<span class="count">'. $comments .'</span>', 'polmo-lite' ) ;
-				} else {
-					echo esc_html( $write_comments =  __('Comments off','polmo-lite') );
-				}
 
-				?>
-			</div><!-- /.comments -->
+					?>
+				</div><!-- /.comments -->
+			<?php } ?>
+
 		</div><!-- /.entry-meta -->
 	</div><!-- /.post-meta -->
-<?php }
+<?php
+}
 
 
 function polmo_lite_get_avatar_url($get_avatar){
@@ -480,3 +492,48 @@ function polmo_lite_blog_hsl_hex( $h, $s, $l, $to_hex = true ) {
 	}
 }
 
+
+
+
+
+
+if ( ! function_exists( 'polmo_lite_post_thumbnail' ) ) :
+	/**
+	 * Displays an optional post thumbnail.
+	 *
+	 * Wraps the post thumbnail in an anchor element on index views, or a div
+	 * element when on single views.
+	 */
+	function polmo_lite_post_thumbnail() {
+		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+			return;
+		}
+
+		if ( is_singular() ) :
+			?>
+
+			<div class="post-thumbnail">
+				<?php the_post_thumbnail(); ?>
+			</div><!-- .post-thumbnail -->
+
+		<?php else : ?>
+
+			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
+				<?php
+					the_post_thumbnail(
+						'polmo-blog-thumb',
+						array(
+							'alt' => the_title_attribute(
+								array(
+									'echo' => false,
+								)
+							),
+						)
+					);
+				?>
+			</a>
+
+			<?php
+		endif; // End is_singular().
+	}
+endif;

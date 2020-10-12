@@ -5,15 +5,16 @@
  * @package Polmo
  */
 
+$polmo_lite_hide_thumb  = Polmo_Lite_Kirki::get_option('polmo_lite','index_hide_thumb');
+$polmo_lite_layout      = polmo_lite_blog_layout();
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="post-head media">
-        <div class="entry-date media-left text-center">
-            <time datetime="<?php echo get_the_time('Y-m-j'); ?>">
-                <?php echo get_the_time('M'); ?> <span> <?php echo get_the_time('d'); ?> </span>
-            </time>
-        </div><!-- /.entry-date -->
+        
+        <?php polmo_lite_post_date();?>
+        
         <div class="media-body">
             <?php the_title( sprintf( '<h1 class="entry-title">', esc_url( get_permalink() ) ), '</h1>' ); ?>
 
@@ -23,13 +24,13 @@
     </div><!-- /.post-head -->
 
     <div class="post-content">
-        <div class="post-thumbnail">
-            <?php if ( has_post_thumbnail() ) { 
-                $url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'polmo-blog-thumb' );
-                ?>
-                <img src="<?php echo esc_url( $url[0] ); ?>" alt="<?php the_title();?>" />
-            <?php } ?>
-        </div><!-- /.post-thumbnail -->
+
+        <?php 
+        if ( $polmo_lite_hide_thumb == '' ){
+            if ( has_post_thumbnail() ) { 
+                polmo_lite_post_thumbnail();
+            } 
+        }?>
 
         <div class="entry-content">
             <?php the_content(); ?>

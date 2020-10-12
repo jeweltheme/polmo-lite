@@ -9,11 +9,9 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="post-head media">
-        <div class="entry-date media-left text-center">
-            <time datetime="<?php echo get_the_time('Y-m-j'); ?>">
-                <?php echo get_the_time('M'); ?> <span> <?php echo get_the_time('d'); ?> </span>
-            </time>
-        </div><!-- /.entry-date -->
+        
+        <?php polmo_lite_post_date();?>
+        
         <div class="media-body">
             <?php the_title( sprintf( '<h1 class="entry-title">', esc_url( get_permalink() ) ), '</h1>' ); ?>
 
