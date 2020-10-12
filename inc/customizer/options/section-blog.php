@@ -13,6 +13,49 @@ Polmo_Lite_Kirki::add_section( 'polmo_lite_section_blog_index', array(
 	'panel'			 => 'polmo_lite_panel',
     'priority'       => 3,
 ) );
+
+Polmo_Lite_Kirki::add_field( 'polmo_lite', [
+	'type'        => 'switch',
+	'settings'    => 'blog_header_section',
+	'label'       => esc_html__( 'Header Section?', 'polmo-lite' ),
+	'section'     => 'polmo_lite_section_blog_index',
+	'default'     => '1',
+	'priority'    => 10,
+	'choices'     => [
+		'on'  => esc_html__( 'Show', 'polmo-lite' ),
+		'off' => esc_html__( 'Hide', 'polmo-lite' ),
+	],
+] );
+
+Polmo_Lite_Kirki::add_field( 'polmo_lite', [
+	'type'        => 'background',
+	'settings'    => 'polmo_lite_banner_image',
+	'label'       => esc_html__( 'Blog Header Image', 'polmo-lite' ),
+	'section'     => 'polmo_lite_section_blog_index',
+	'default'     => [
+		'background-color'      => 'rgba(20,20,20,.8)',
+		'background-image'      => '',
+		'background-repeat'     => 'repeat',
+		'background-position'   => 'center center',
+		'background-size'       => 'cover',
+		'background-attachment' => 'scroll',
+	],
+	'transport'   => 'auto',
+	'output'      => [
+		[
+			'element' => '.page-head',
+		],
+	],
+
+    'required'  => array(
+        array(
+            'setting'  => 'blog_header_section',
+            'value'    => true,
+            'operator' => '==',
+        ),
+	),
+] );
+
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'type'        => 'radio',
 	'settings'    => 'blog_layout',

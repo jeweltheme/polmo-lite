@@ -62,13 +62,13 @@ function polmo_lite_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'polmo_lite_customize_register' );
 
-
 function polmo_lite_customize_preview_js() {
-	wp_enqueue_script( 'polmo_lite_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20130508', true );
+	wp_enqueue_script( 'polmo_lite_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), POLMO_LITE_VER, true );
 }
 add_action( 'customize_preview_init', 'polmo_lite_customize_preview_js' );
 
 
+//Santize Text function
 function polmo_lite_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }
@@ -97,7 +97,7 @@ require get_template_directory() . '/inc/customizer/kirki/class-prowptheme-kirki
 /**
  * Add Kirki config
  */
-ProWPTheme_Kirki::add_config( 'polmo_lite', array(
+Polmo_Lite_Kirki::add_config( 'polmo_lite', array(
 	'capability'    => 'edit_theme_options',
 	'option_type'   => 'theme_mod',
 ) );

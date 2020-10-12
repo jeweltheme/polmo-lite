@@ -23,7 +23,7 @@ function polmo_lite_add_theme_info(){
 		'manage_options',
 		'polmo-lite-info.php',
 		'polmo_lite_info_page',
-		POLMO_LITE_THEME_URI . '/assets/images/icon.svg',
+		POLMO_LITE_THEME_URI . '/images/icon.svg',
 		4
 	);
 

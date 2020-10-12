@@ -79,10 +79,3 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'sanitize_callback' => 'sanitize_text_field',
 	'priority'    => 10,
 ) );
-
-
-
-//Santize function
-function polmo_lite_sanitize_text( $input ) {
-    return wp_kses_post( force_balance_tags( $input ) );
-}
