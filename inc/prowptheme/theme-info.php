@@ -99,7 +99,7 @@ function polmo_lite_info_page(){
 							</div>
 
 							<div class="plugin-block">
-								<?php $plugin = 'brooklyn-demo-importer'; ?>
+								<?php $plugin = 'polmo-lite-demo-importer'; ?>
 								<h3>Polmo Demo Importer</h3>
 								<p><?php esc_html_e( 'Polmo Demo Importer is a free addon for the Polmo WordPress theme. It acts as an interface between the One Click Demo Import plugin and our theme.', 'polmo-lite' ); ?></p>
 								<?php echo Polmo_Lite_Recommended_Plugins::instance()->get_button_html( $plugin ); ?>
@@ -128,14 +128,14 @@ function polmo_lite_info_page(){
 							$one_click_demo_importer = 'one-click-demo-import';
 							$is_ocdi_active = Polmo_Lite_Recommended_Plugins::instance()->check_plugin_state($one_click_demo_importer);
 
-							$brooklyn_demo_importer = 'brooklyn-demo-importer';
-							$is_ocdi_active = Polmo_Lite_Recommended_Plugins::instance()->check_plugin_state($brooklyn_demo_importer);
+							$polmo_lite_demo_importer = 'polmo-lite-demo-importer';
+							$is_ocdi_active = Polmo_Lite_Recommended_Plugins::instance()->check_plugin_state($polmo_lite_demo_importer);
 
 							$kirki = 'kirki';
 							$is_kirki_active = Polmo_Lite_Recommended_Plugins::instance()->check_plugin_state($kirki);
 						?>
 							<?php if ($is_polmo_lite_toolbox_active == 'deactivate' && $is_elementor_active == 'deactivate' && $is_ocdi_active == 'deactivate' && $is_kirki_active == 'deactivate'): ?>
-								<a class="button button-primary button-large" href="<?php echo admin_url('admin.php?page=brooklyn-demo-import'); ?>"><?php esc_html_e('One Click Demo importer', 'polmo-lite'); ?></a>
+								<a class="button button-primary button-large" href="<?php echo admin_url('admin.php?page=polmo-lite-demo-importer'); ?>"><?php esc_html_e('One Click Demo importer', 'polmo-lite'); ?></a>
 							<?php else: ?>
 								<p class="polmo-lite-notice"><?php esc_html_e('All recommended plugins need to be installed and activated for this step.', 'polmo-lite'); ?></p>
 							<?php endif; ?>
@@ -167,7 +167,7 @@ function polmo_lite_info_page(){
 						<span class="dashicons dashicons-book-alt"></span>
 						<h3><?php esc_html_e('Documentation', 'polmo-lite'); ?></h3>
 						<p><?php esc_html_e('Our documentation can help you learn how to use the theme and also provides you with premade code snippets and answers to FAQs.', 'polmo-lite'); ?></p>
-						<a href="<?php echo esc_url_raw('https://prowptheme.com/docs/brooklyn/');?>" target="_blank"><?php esc_html_e('See the Documentation', 'polmo-lite'); ?></a>
+						<a href="<?php echo esc_url_raw('https://prowptheme.com/docs/polmo-lite/');?>" target="_blank"><?php esc_html_e('See the Documentation', 'polmo-lite'); ?></a>
 						</div>
 					</div>
 				</div>

@@ -1,6 +1,5 @@
 <?php
 function polmo_lite_quick_style(){ 
-	//$polmo_lite_banner_image = get_theme_mod('polmo_lite_banner_image', get_template_directory_uri() . '/images/background/blog.jpg');
 	$polmo_lite_subscriber_image = get_theme_mod('polmo_lite_subscriber_image', get_template_directory_uri() . '/images/background/1.jpg');
 ?>
 	<style type="text/css">

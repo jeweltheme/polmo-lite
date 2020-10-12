@@ -76,7 +76,7 @@ $polmo_lite_general_blog_desc = get_theme_mod('polmo_lite_general_blog_desc', ''
 			<div class="section-padding">
 				<div class="container">
 					<h1 class="page-title">
-						<?php echo  wp_kses_post($polmo_lite_general_blog_title); ?>
+						<?php echo wp_kses_post($polmo_lite_general_blog_title); ?>
 					</h1><!-- /.page-title -->
 					<p class="page-description">
 						<?php echo esc_attr($polmo_lite_general_blog_desc ); ?>
