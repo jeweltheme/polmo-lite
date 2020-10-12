@@ -1,0 +1,1004 @@
+@media screen and (min-width: 1201px) and (max-width: 1280px) {
+    .item-no .count {
+        font-size: 5em;
+    }
+    .sponsors .section-padding {
+        padding: 150px 0px;
+    }
+}
+@media screen and (min-width: 1171px) and (max-width: 1200px) {
+    .item-no .count {
+        font-size: 5em;
+    }
+    .sponsors .section-padding {
+        padding: 130px 0px;
+    }
+    .about-breifing .item {
+        padding: 0px 20px;
+    }
+}
+@media screen and (min-width: 1101px) and (max-width: 1170px) {
+    .item-no .count {
+        font-size: 5em;
+    }
+    .sponsors .section-padding {
+        padding: 130px 0px;
+    }
+    .about-breifing .item {
+        padding: 0px 20px;
+    }
+    .page-head .page-title {
+        padding-top: 60px;
+    }
+    .sidebar {
+        padding-left: 15px;
+    }
+    .sidebar .widget {
+        padding-bottom: 60px;
+    }
+    .sidebar .post-thumbnail {
+        margin-right: 10px;
+    }
+    .sidebar .social-list li {
+        padding: 0px 10px;
+    }
+    .stream-list li {
+        margin: 0px 3px 5px 0px;
+        max-width: 60px;
+    }
+    .footer-social .section-padding {
+        padding: 40px 0px;
+    }
+    .photo-list li {
+        max-width: 65px;
+        max-height: 65px;
+        margin: 0px 5px 8px 0px;
+    }
+}
+@media screen and (min-width: 1025px) and (max-width: 1100px) {
+    .section-padding {
+        padding: 60px 0px;
+    }
+    .item-no .count {
+        font-size: 5em;
+    }
+    .portfolio-bottom .section-description {
+        padding: 0px 10%;
+    }
+    .sponsors .section-padding {
+        padding: 100px 0px;
+    }
+    .about-breifing .item {
+        padding: 0px 20px;
+    }
+    .testimonial .section-padding {
+        padding: 80px 0px 145px 0px;
+    }
+    .page-head .page-title {
+        padding-top: 60px;
+    }
+    .sidebar {
+        padding-left: 15px;
+    }
+    .sidebar .widget {
+        padding-bottom: 60px;
+    }
+    .sidebar .post-thumbnail {
+        margin-right: 10px;
+    }
+    .sidebar .social-list li {
+        padding: 0px 10px;
+    }
+    .stream-list li {
+        margin: 0px 3px 5px 0px;
+        max-width: 60px;
+    }
+    .footer-social .section-padding {
+        padding: 40px 0px;
+    }
+    .photo-list li {
+        max-width: 65px;
+        max-height: 65px;
+        margin: 0px 5px 8px 0px;
+    }
+    .contactform input,
+    .contactform textarea {
+        min-width: 285px;
+    }
+}
+@media screen and (min-width: 993px) and (max-width: 1024px) {
+    .section-padding {
+        padding: 50px 0px;
+    }
+    .item-no .count {
+        font-size: 5em;
+    }
+    .subscribe-section .section-description,
+    .portfolio-bottom .section-description {
+        padding: 0px 10%;
+    }
+    .sponsors .section-padding {
+        padding: 90px 0px;
+    }
+    .about-breifing .item {
+        padding: 0px 20px;
+    }
+    .testimonial .section-padding {
+        padding: 70px 0px 135px 0px;
+    }
+    .page-head .page-title {
+        padding-top: 50px;
+    }
+    .pagination {
+        padding: 50px 0px;
+    }
+    .sidebar {
+        padding-left: 15px;
+    }
+    .sidebar .widget {
+        padding-bottom: 50px;
+    }
+    .sidebar .post-thumbnail {
+        margin-right: 10px;
+    }
+    .sidebar .social-list li {
+        padding: 0px 10px;
+    }
+    .stream-list li {
+        margin: 0px 3px 5px 0px;
+        max-width: 60px;
+    }
+    .footer-social .section-padding {
+        padding: 40px 0px;
+    }
+    .photo-list li {
+        max-width: 65px;
+        max-height: 65px;
+        margin: 0px 5px 8px 0px;
+    }
+    .contactform input,
+    .contactform textarea {
+        min-width: 285px;
+    }
+}
+@media screen and (min-width: 901px) and (max-width: 992px) {
+    .section-padding {
+        padding: 50px 0px;
+    }
+    .slider-title {
+        font-size: 2.75em;
+    }
+    .service-details .item {
+        margin: 15px 0px;
+    }
+    .our-skills {
+        padding-top: 30px;
+    }
+    .item-no .count {
+        font-size: 5em;
+        letter-spacing: 0px;
+    }
+    .about-breifing .item {
+        padding: 0px 80px;
+    }
+    .about-work {
+        padding-right: 5%;
+    }
+    .subscribe-section .section-description,
+    .portfolio-bottom .section-description {
+        padding: 0px 10%;
+    }
+    .sponsors .section-padding {
+        padding: 90px 0px;
+    }
+    .testimonial .section-padding {
+        padding: 70px 0px 135px 0px;
+    }
+    .testimonial-slider blockquote {
+        padding: 0px;
+    }
+    .page-head .page-title {
+        padding-top: 50px;
+    }
+    .pagination {
+        padding: 50px 0px;
+    }
+    .main-content article {
+        padding-top: 50px;
+    }
+    .sidebar {
+        padding-left: 15px;
+    }
+    .sidebar .widget {
+        padding-bottom: 50px;
+    }
+    .sidebar .post-thumbnail {
+        margin-right: 10px;
+    }
+    .sidebar article {
+        padding-top: 0px;
+    }
+    .sidebar .social-list li {
+        padding: 0px 10px;
+    }
+    .footer-social .section-padding {
+        padding: 40px 0px;
+    }
+    .photo-list li {
+        max-width: 65px;
+        max-height: 65px;
+        margin: 0px 5px 8px 0px;
+    }
+    .contactform input,
+    .contactform textarea {
+        min-width: 260px;
+    }
+}
+@media screen and (min-width: 801px) and (max-width: 900px) {
+    .section-padding {
+        padding: 50px 0px;
+    }
+    .slider-title {
+        font-size: 2.75em;
+    }
+    .service-details .item {
+        margin: 15px 0px;
+    }
+    .our-skills {
+        padding-top: 30px;
+    }
+    .item-no .count {
+        font-size: 5em;
+        letter-spacing: 0px;
+    }
+    .about-breifing .item {
+        padding: 0px 80px;
+    }
+    .about-work {
+        padding-right: 5%;
+    }
+    .subscribe-section .section-description,
+    .portfolio-bottom .section-description {
+        padding: 0px 10%;
+    }
+    .sponsors .section-padding {
+        padding: 90px 0px;
+    }
+    .testimonial .section-padding {
+        padding: 70px 0px 135px 0px;
+    }
+    .testimonial-slider blockquote {
+        padding: 0px;
+    }
+    .page-head .page-title {
+        font-size: 2.5em;
+        padding-top: 50px;
+    }
+    .pagination {
+        padding: 50px 0px;
+    }
+    .main-content article {
+        padding-top: 50px;
+    }
+    .sidebar {
+        padding-left: 15px;
+    }
+    .sidebar .widget {
+        padding-bottom: 50px;
+    }
+    .sidebar .post-thumbnail {
+        margin-right: 10px;
+    }
+    .sidebar article {
+        padding-top: 0px;
+    }
+    .sidebar .social-list li {
+        padding: 0px 10px;
+    }
+    .footer-social .section-padding {
+        padding: 40px 0px;
+    }
+    .photo-list li {
+        max-width: 65px;
+        max-height: 65px;
+        margin: 0px 5px 8px 0px;
+    }
+    .form-area {
+        max-width: inherit;
+        position: inherit;
+        padding: 20px 5% 40px 5%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 800px) {
+    .section-padding {
+        padding: 50px 0px;
+    }
+    .slide-inner {
+        padding-top: 20%;
+    }
+    .slider-title {
+        font-size: 2.25em;
+    }
+    .service-details .item {
+        margin: 15px 0px;
+    }
+    .our-skills {
+        padding-top: 30px;
+    }
+    .item-no .count {
+        font-size: 5em;
+        letter-spacing: 0px;
+    }
+    .about-work {
+        padding-right: 5%;
+    }
+    .subscribe-section .section-description,
+    .portfolio-bottom .section-description {
+        padding: 0px 10%;
+    }
+    .sponsors .section-padding {
+        padding: 90px 0px;
+    }
+    .testimonial .section-padding {
+        padding: 70px 0px 135px 0px;
+    }
+    .testimonial-slider blockquote {
+        padding: 0px;
+    }
+    .page-head .page-title {
+        font-size: 2.5em;
+        padding-top: 50px;
+    }
+    .pagination {
+        padding: 50px 0px;
+    }
+    .main-content {
+        padding-top: 60px;
+    }
+    .main-content article {
+        padding-top: 50px;
+    }
+    .sidebar {
+        padding-left: 15px;
+    }
+    .sidebar .widget {
+        padding-bottom: 50px;
+    }
+    .sidebar .post-thumbnail {
+        margin-right: 10px;
+    }
+    .sidebar article {
+        padding-top: 0px;
+    }
+    .sidebar .social-list li {
+        padding: 0px 10px;
+    }
+    .footer-social .section-padding {
+        padding: 40px 0px;
+    }
+    .photo-list li {
+        max-width: 65px;
+        max-height: 65px;
+        margin: 0px 5px 8px 0px;
+    }
+    .form-area {
+        max-width: inherit;
+        position: inherit;
+        padding: 20px 5% 40px 5%;
+    }
+}
+@media screen and (max-width: 767px) {
+    .navbar-brand {
+        padding-top: 14px;
+    }
+    .navbar-default .navbar-toggle:focus,
+    .navbar-default .navbar-toggle:hover {
+        background: transparent;
+        outline: 0;
+        color: #fff;
+    }
+    .navbar-default .navbar-toggle {
+        border-color: transparent;
+        color: #fff;
+    }
+    .bg-change .navbar-toggle {
+        padding: 5px 10px;
+    }
+    .navbar-collapse.pull-right {
+        float: none !important;
+    }
+    .navbar-nav>li>a,
+    .bg-change .navbar-nav>li>a {
+        padding: 10px 20px;
+    }
+    .section-padding {
+        padding: 50px 0px;
+    }
+    .section-description {
+        padding: 0px 5%;
+    }
+    .slide-inner {
+        padding-top: 20%;
+    }
+    .slider-title {
+        font-size: 2.25em;
+    }
+    .service-details .item {
+        margin: 15px 0px;
+    }
+    .our-skills {
+        padding-top: 30px;
+    }
+    .item-no .count {
+        font-size: 5em;
+        letter-spacing: 0px;
+    }
+    .about-breifing .item {
+        padding: 0px 20%;
+    }
+    .about-work {
+        padding-right: 5%;
+    }
+    .subscribe-section .section-description,
+    .portfolio-bottom .section-description {
+        padding: 0px 5%;
+    }
+    .sponsors .section-padding {
+        padding: 70px 0px;
+    }
+    .sponsors-logo div.col-xs-6 {
+        margin: 15px 0px;
+    }
+    .testimonial .section-padding {
+        padding: 50px 0px 105px 0px;
+    }
+    .testimonial-slider blockquote {
+        padding: 0px;
+    }
+    .page-head .page-title {
+        font-size: 2em;
+        padding-top: 45px;
+    }
+    .pagination {
+        padding: 50px 0px;
+    }
+    .main-content {
+        padding-top: 50px;
+    }
+    .main-content article {
+        padding-top: 40px;
+    }
+    .sidebar {
+        padding-left: 15px;
+    }
+    .sidebar .widget {
+        padding-bottom: 50px;
+    }
+    .sidebar .post-thumbnail {
+        margin-right: 10px;
+    }
+    .sidebar article {
+        padding-top: 0px;
+    }
+    .sidebar .social-list li {
+        padding: 0px 10px;
+    }
+    .footer-social .section-padding {
+        padding: 40px 0px;
+    }
+    .photo-list li {
+        max-width: 65px;
+        max-height: 65px;
+        margin: 0px 5px 8px 0px;
+    }
+    .form-area {
+        max-width: inherit;
+        position: inherit;
+        padding: 20px 5% 40px 5%;
+    }
+    .widget .subscribe {
+        max-width: 370px;
+    }
+}
+@media screen and (min-width: 641px) and (max-width: 767px) {
+    .btn,
+    .itemFilter a {
+        padding: 10px 20px;
+    }
+    .slider-title {
+        font-size: 2em;
+    }
+    .bx-wrapper .bx-next {
+        right: 3%;
+    }
+    .bx-wrapper .bx-prev {
+        left: 3%;
+    }
+    #subscribe-submit {
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    .google-map-container {
+        height: 400px;
+    }
+    .widget #subscribe-submit {
+        margin: 0px;
+    }
+}
+@media screen and (min-width: 569px) and (max-width: 640px) {
+    .btn,
+    .itemFilter a {
+        padding: 10px 20px;
+    }
+    .slider-title {
+        font-size: 1.5em;
+    }
+    .section-title {
+        font-size: 1.5em;
+        padding-bottom: 0px;
+    }
+    .slide-description {
+        font-size: .9em;
+    }
+    .subscribe-section .section-description,
+    .portfolio-bottom .section-description {
+        padding: 0px;
+    }
+    .bx-wrapper .bx-next {
+        right: 3%;
+    }
+    .bx-wrapper .bx-prev {
+        left: 3%;
+    }
+    .section-padding {
+        padding: 40px 0px;
+    }
+    .latest-projects .btn-container,
+    .blog .btn-container {
+        padding-top: 45px;
+    }
+    #subscribe-submit {
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    .google-map-container {
+        height: 350px;
+    }
+    .widget #subscribe-submit {
+        margin: 0px;
+        top: 2px;
+        right: 2px;
+    }
+}
+@media screen and (min-width: 481px) and (max-width: 568px) {
+    .btn,
+    .itemFilter a {
+        padding: 8px 15px;
+    }
+    .slider-title {
+        font-size: 1.25em;
+    }
+    .section-title {
+        font-size: 1.5em;
+        padding-bottom: 0px;
+    }
+    .slide-description,
+    .section-description {
+        font-size: .875em;
+    }
+    .subscribe-section .section-description,
+    .portfolio-bottom .section-description {
+        padding: 0px;
+    }
+    .bx-wrapper .bx-next {
+        right: 2%;
+    }
+    .bx-wrapper .bx-prev {
+        left: 2%;
+    }
+    .section-padding {
+        padding: 35px 0px;
+    }
+    .latest-projects .btn-container,
+    .blog .btn-container {
+        padding-top: 30px;
+    }
+    #subscribe-submit {
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    .google-map-container {
+        height: 320px;
+    }
+    .page-head .page-title {
+        font-size: 1.5em;
+    }
+    .breadcrumb li {
+        padding: 15px 8px;
+    }
+    .widget-menu {
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    .widget #subscribe-submit {
+        margin: 0px;
+        top: 2px;
+        right: 2px;
+    }
+    .scroll-to-top {
+        font-size: 1.15em;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        right: 25px;
+        bottom: 45px;
+    }
+}
+@media screen and (min-width: 415px) and (max-width: 480px) {
+    .btn,
+    .itemFilter a {
+        padding: 8px 15px;
+    }
+    .slide-inner {
+        padding-top: 15%;
+    }
+    .slide-inner .btn {
+        border: 1px solid #fff;
+        padding: 8px 15px;
+    }
+    .slider-title {
+        font-size: 1.25em;
+    }
+    .section-title {
+        font-size: 1.5em;
+        padding-bottom: 0px;
+    }
+    .slide-description,
+    .section-description {
+        font-size: .875em;
+    }
+    .subscribe-section .section-description,
+    .portfolio-bottom .section-description {
+        padding: 0px;
+    }
+    .bx-wrapper .bx-next {
+        right: 2%;
+    }
+    .bx-wrapper .bx-prev {
+        left: 2%;
+    }
+    .section-padding {
+        padding: 35px 0px;
+    }
+    .latest-projects .btn-container,
+    .blog .btn-container {
+        padding-top: 30px;
+    }
+    #subscribe-submit {
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    .testimonial .section-padding {
+        padding: 40px 0px 80px 0px;
+    }
+    .testimonial-slider .carousel-indicators {
+        bottom: -35px;
+    }
+    .google-map-container {
+        height: 300px;
+    }
+    .contactform input,
+    .contactform textarea {
+        min-width: inherit;
+    }
+    .page-head .page-title {
+        font-size: 1.5em;
+    }
+    .breadcrumb li {
+        padding: 15px 8px;
+    }
+    .post-head .media-body {
+        padding-left: 15px;
+    }
+    .widget-menu {
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    .widget #subscribe-submit {
+        margin: 0px;
+        top: 2px;
+        right: 2px;
+    }
+    .scroll-to-top {
+        font-size: 1.15em;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        right: 25px;
+        bottom: 45px;
+    }
+}
+@media screen and (min-width: 361px) and (max-width: 414px) {
+    .btn,
+    .itemFilter a {
+        padding: 8px 15px;
+    }
+    .slide-inner {
+        padding-top: 15%;
+    }
+    .slide-inner .btn {
+        border: 1px solid #fff;
+        padding: 8px 15px;
+    }
+    .slider-title {
+        font-size: 1.25em;
+    }
+    .section-title {
+        font-size: 1.5em;
+        padding-bottom: 0px;
+    }
+    .slide-description,
+    .section-description {
+        font-size: .875em;
+    }
+    .subscribe-section .section-description,
+    .portfolio-bottom .section-description {
+        padding: 0px;
+    }
+    .bx-wrapper .bx-next {
+        right: 2%;
+    }
+    .bx-wrapper .bx-prev {
+        left: 2%;
+    }
+    .section-padding {
+        padding: 35px 0px;
+    }
+    .latest-projects .btn-container,
+    .blog .btn-container {
+        padding-top: 30px;
+    }
+    #subscribe-submit {
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    .entry-title {
+        font-size: 1.5em;
+        padding-bottom: 5px;
+    }
+    .post-head .entry-date {
+        padding: 10px;
+    }
+    .testimonial .section-padding {
+        padding: 40px 0px 80px 0px;
+    }
+    .testimonial-slider .carousel-indicators {
+        bottom: -35px;
+    }
+    .google-map-container {
+        height: 300px;
+    }
+    .contactform input,
+    .contactform textarea {
+        min-width: inherit;
+    }
+    .page-head .page-title {
+        font-size: 1.5em;
+    }
+    .breadcrumb li {
+        padding: 15px 8px;
+    }
+    .post-head .media-body {
+        padding-left: 15px;
+    }
+    .widget-menu {
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    .widget #subscribe-submit {
+        margin: 0px;
+        top: 2px;
+        right: 2px;
+    }
+    .scroll-to-top {
+        font-size: 1.15em;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        right: 25px;
+        bottom: 45px;
+    }
+}
+@media screen and (min-width: 321px) and (max-width: 360px) {
+    #masthead {
+        background: #000;
+    }
+    .btn,
+    .itemFilter a {
+        padding: 8px 15px;
+    }
+    #main-slider {
+        height: 50px;
+    }
+    .bx-wrapper {
+        display: none;
+    }
+    .section-title {
+        font-size: 1.5em;
+        padding-bottom: 0px;
+    }
+    .section-description {
+        font-size: .875em;
+    }
+    .subscribe-section .section-description,
+    .portfolio-bottom .section-description {
+        padding: 0px;
+    }
+    .bx-wrapper .bx-next {
+        right: 2%;
+    }
+    .bx-wrapper .bx-prev {
+        left: 2%;
+    }
+    .section-padding {
+        padding: 35px 0px;
+    }
+    .about-breifing .item {
+        padding: 0px 10%;
+    }
+    .latest-projects .btn-container,
+    .blog .btn-container {
+        padding-top: 30px;
+    }
+    #subscribe-submit {
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    .entry-title {
+        font-size: 1.25em;
+        padding-bottom: 5px;
+    }
+    .post-head .entry-date {
+        padding: 10px;
+    }
+    .testimonial .section-padding {
+        padding: 30px 0px 60px 0px;
+    }
+    .testimonial-slider .carousel-indicators {
+        bottom: -35px;
+    }
+    .google-map-container {
+        height: 300px;
+    }
+    .contactform input,
+    .contactform textarea {
+        min-width: inherit;
+    }
+    .footer-social .col-xs-4 {
+        width: 100%;
+    }
+    .page-head .page-title {
+        font-size: 1.5em;
+    }
+    .breadcrumb li {
+        padding: 15px 8px;
+    }
+    .post-head .media-body {
+        padding-left: 15px;
+    }
+    .widget-menu {
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    .widget #subscribe-submit {
+        margin: 0px;
+        top: 2px;
+        right: 2px;
+    }
+    .scroll-to-top {
+        font-size: 1.15em;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        right: 25px;
+        bottom: 45px;
+    }
+}
+@media screen and (max-width: 320px) {
+    #masthead {
+        background: #000;
+    }
+    .btn,
+    .itemFilter a {
+        padding: 8px 15px;
+    }
+    #main-slider {
+        height: 50px;
+    }
+    .bx-wrapper {
+        display: none;
+    }
+    .section-title {
+        font-size: 1.5em;
+        padding-bottom: 0px;
+    }
+    .section-description {
+        font-size: .875em;
+    }
+    .subscribe-section .section-description,
+    .portfolio-bottom .section-description {
+        padding: 0px;
+    }
+    .bx-wrapper .bx-next {
+        right: 2%;
+    }
+    .bx-wrapper .bx-prev {
+        left: 2%;
+    }
+    .section-padding {
+        padding: 35px 0px;
+    }
+    .about-breifing .item {
+        padding: 0px 10%;
+    }
+    .latest-projects .btn-container,
+    .blog .btn-container {
+        padding-top: 30px;
+    }
+    .sponsors-logo div.col-xs-6 {
+        width: 100%;
+    }
+    #subscribe-submit {
+        margin-top: 20px;
+        margin-left: 0px;
+    }
+    .entry-title {
+        font-size: 1.25em;
+        padding-bottom: 5px;
+    }
+    .post-head .entry-date {
+        padding: 10px;
+    }
+    .testimonial .section-padding {
+        padding: 30px 0px 60px 0px;
+    }
+    .testimonial-slider .carousel-indicators {
+        bottom: -35px;
+    }
+    .google-map-container {
+        height: 300px;
+    }
+    .contactform input,
+    .contactform textarea {
+        min-width: inherit;
+    }
+    .footer-social .col-xs-4 {
+        width: 100%;
+    }
+    .page-head .page-title {
+        font-size: 1.5em;
+    }
+    .breadcrumb li {
+        padding: 15px 8px;
+    }
+    .post-head .media-body {
+        padding-left: 15px;
+    }
+    .widget-menu {
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    .widget #subscribe-submit {
+        margin: 0px;
+        top: 2px;
+        right: 2px;
+    }
+    .scroll-to-top {
+        font-size: 1.15em;
+        height: 30px;
+        width: 30px;
+        line-height: 30px;
+        right: 25px;
+        bottom: 45px;
+    }
+}

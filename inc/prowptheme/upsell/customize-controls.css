@@ -1,0 +1,37 @@
+#customize-controls .control-section-polmo-lite .accordion-section-title:hover,
+#customize-controls .control-section-polmo-lite .accordion-section-title:focus {
+	background-color: #fff;
+}
+body #accordion-section-polmo_lite_upsell .accordion-section-title .button {
+	margin-top: -4px;
+    font-weight: 700;
+    margin-left: 8px;
+    background: #ff3c36;
+    border: none;
+    color: #fff;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    -ms-box-shadow: none;
+    -o-box-shadow: none;
+
+}
+.rtl .control-section-polmo-lite .accordion-section-title .button {
+	margin-left:  0;
+	margin-right: 8px;
+}
+.wp-core-ui .button.upsell-button {
+	background-color: #d65050;
+	color: #fff;
+	box-shadow: none;
+}
+#customize-theme-controls #accordion-section-polmo_lite_upsell h3 {
+	background-color: #5a5a5a !important;
+    color: #fff !important;
+    border-left: 0 !important;
+    padding-top: 20px;
+    padding-bottom: 20px;	
+}
+body #accordion-section-polmo_lite_upsell {
+    display: block !important;
+}
