@@ -374,12 +374,13 @@ if(!function_exists('polmo_lite_comment')){
             			</span> 
             		</div><!-- /.comment-meta -->
 
-            		<p class="comment-description">
+            		<div class="comment-description">
+	            		<div class="comment-time">
+	            			<time datetime="<?php the_time( 'c' ); ?>"> <?php the_time('d  M, Y'); ?> <?php echo _e("at", "polmo-lite");?> <?php echo get_comment_time()?></time> 
+	            		</div>            			
             			<?php echo get_comment_text(); ?>
-            		</p>
-            		<div class="comment-time">
-            			<time datetime="<?php the_time( 'c' ); ?>"> <?php the_time('d  M, Y'); ?> <?php echo _e("at", "polmo-lite");?> <?php echo get_comment_time()?></time> 
             		</div>
+
             	</div><!-- /.comment-content -->
                 
             </div><!-- /.comment-top -->

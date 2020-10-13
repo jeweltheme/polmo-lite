@@ -984,6 +984,9 @@ h1.navbar-brand {
 .single-post .post-thumbnail {
     padding-top: 20px;
 }
+.single-post .layout-3 .post-thumbnail {
+    padding-top: 0;   
+}
 .share-post {
     display: inline-block;
 }
@@ -1213,7 +1216,7 @@ h1.navbar-brand {
 .comment-reply-title {
     font-size: 25px;
     font-weight: 700;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     padding-bottom: 25px;
 }
 .comment-form {
@@ -1232,8 +1235,10 @@ h1.navbar-brand {
     outline: 0;
 }
 .comment-form input {
-    margin-bottom: -1px;
     max-width: 270px;
+    font-size: 1.5em;
+    color: #fff;
+    font-weight: 600;
 }
 .comment-form .btn {
     border: 2px solid #e74c3c;
@@ -1246,7 +1251,7 @@ h1.navbar-brand {
 }
 .comment-section {
     clear: both;
-    padding-top: 75px;
+    padding: 75px 0;
 }
 .comment-author {
     padding-right: 30px !important;
@@ -1269,13 +1274,16 @@ h1.navbar-brand {
     color: #333;
 }
 .comment-description {
-    font-size: .8125em;
+    font-size: .9em;
     line-height: 22px;
     margin-bottom: 0px;
     padding-top: 3px;
 }
 .comment-time {
-    color: #e8e8e8;
+    color: #b7b1b1;
+}
+.comment-respond{
+    padding: 0 !important;
 }
 .comment .children {
     padding: 45px 0px 25px 100px;
