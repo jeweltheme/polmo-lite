@@ -131,13 +131,10 @@ if ( !function_exists( 'polmo_lite_blog_layout' ) ) {
 		if ( $layout == 'layout-grid' || $layout == 'layout-masonry' ) {
 			$cols 		= 'col-md-12';
 			$sidebar	= false;
-		}
-		elseif ( $layout == 'layout-classic' || $layout == 'layout-two-columns' )
-		{
+		} elseif ( $layout == 'layout-classic' || $layout == 'layout-two-columns' ) {
 			$cols 		= 'col-lg-9';
 			$sidebar 	= true;
-		}
-		else {
+		} else {
 			$cols 		= 'col-md-9';
 			$sidebar 	= true;
 		}	
@@ -145,12 +142,9 @@ if ( !function_exists( 'polmo_lite_blog_layout' ) ) {
 		//Inner columns for list layout
 		if ( $layout == 'layout-list' ) {
 			$item_inner_cols = 'col-md-6 col-sm-12';
-		}
-		elseif ( $layout == 'layout-classic' )
-		{
+		} elseif ( $layout == 'layout-classic' ) {
 			$item_inner_cols = '';
-		}
-		else {
+		} else {
 			$item_inner_cols = 'col-md-12';
 		}
 
