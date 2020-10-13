@@ -5,16 +5,14 @@
  * @package Polmo
  */
 
-$polmo_lite_hide_thumb  = Polmo_Lite_Kirki::get_option('polmo_lite','index_hide_thumb');
-$polmo_lite_layout      = polmo_lite_blog_layout();
-
+$polmo_lite_hide_thumb      = Polmo_Lite_Kirki::get_option('polmo_lite','index_hide_thumb');
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="post-head media">
         
         <?php polmo_lite_post_date();?>
-        
+
         <div class="media-body">
             <?php the_title( sprintf( '<h1 class="entry-title">', esc_url( get_permalink() ) ), '</h1>' ); ?>
 
@@ -33,6 +31,7 @@ $polmo_lite_layout      = polmo_lite_blog_layout();
         }?>
 
         <div class="entry-content">
+
             <?php the_content(); ?>
             
             <?php
@@ -43,8 +42,7 @@ $polmo_lite_layout      = polmo_lite_blog_layout();
             ?>
         </div><!-- .entry-content -->
         
-        <?php 
-        $tags_list = get_the_tag_list( '', esc_html__( ', ', 'polmo-lite' ) );
+        <?php $tags_list = get_the_tag_list( '', esc_html__( ', ', 'polmo-lite' ) );
         if( $tags_list ){ ?>
             <div class="post-tag">
                 <ul class="tag-list">
@@ -55,5 +53,6 @@ $polmo_lite_layout      = polmo_lite_blog_layout();
 
     </div><!-- /.post-content -->
 </article><!-- /.type-post -->
+
 
 <?php echo polmo_lite_author_bio(); ?>

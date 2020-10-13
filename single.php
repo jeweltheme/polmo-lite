@@ -4,11 +4,11 @@
  *
  * @package Polmo
  */
+get_header(); 
+$plmo_lite_single_layout    = polmo_lite_single_layout();
+?>
 
-
-get_header(); ?>
-
-	<div class="col-md-9">
+	<div class="<?php echo esc_attr( $brooklyn_lite_single_layout['cols'] ); ?>">
 		<?php 
 			if ( have_posts() ) { while ( have_posts() ) { the_post(); 
 				/* Include the Post-Format-specific template for the content.
@@ -30,9 +30,10 @@ get_header(); ?>
 		?>
 	</div>
 
-	<div class="col-md-3">
-		<?php get_sidebar(); ?>
-	</div>
+	<?php if ( $plmo_lite_single_layout['sidebar'] ) { ?>
+		<div class="col-md-3">
+			<?php get_sidebar(); ?>
+		</div>
+	<?php } ?>
 
-<?php get_footer(); ?>
-
+<?php get_footer();

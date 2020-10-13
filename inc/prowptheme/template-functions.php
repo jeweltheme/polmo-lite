@@ -125,7 +125,7 @@ function polmo_lite_read_more(){
 if ( !function_exists( 'polmo_lite_blog_layout' ) ) {
 	function polmo_lite_blog_layout() {
 
-		$layout = get_theme_mod( 'blog_layout', 'layout-default' );
+		$layout  = Polmo_Lite_Kirki::get_option('polmo_lite','blog_layout');
 
 		//Blog archive columns
 		if ( $layout == 'layout-grid' || $layout == 'layout-masonry' ) {
@@ -172,7 +172,7 @@ if ( !function_exists( 'polmo_lite_single_layout' ) ) {
 
 		//Single post columns
 		if ( $layout == 'layout-default' ) {
-			$cols 		= '';
+			$cols 		= 'col-md-9';
 			$sidebar	= true;
 		} else {
 			$cols 		= 'col-md-12';

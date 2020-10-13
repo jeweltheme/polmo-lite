@@ -97,7 +97,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'settings'    => 'blog_layout',
 	'label'       => __( 'Blog layout', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_blog_index',
-	'default'     => 'layout-default',
+	'default'     => 'layout-classic',
 	'choices'     => array(
 		'layout-classic' 			=> esc_attr__( 'Classic', 'polmo-lite' ),
 		'layout-grid' 				=> esc_attr__( 'Grid', 'polmo-lite' ),

@@ -6,6 +6,7 @@
  *
  * @package Polmo
  */
+$plmo_lite_single_layout    = polmo_lite_single_layout();
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -108,6 +109,6 @@ if ( $polmo_lite_breadcrumbs == '' ){ ?>
 	</section>
 <?php } ?>
 
-	<section id="main-content" class="main-content">
+	<section id="main-content" class="main-content <?php echo esc_attr( $plmo_lite_single_layout['type'] ); ?>">
 		<div class="container">
 			<div class="row">
