@@ -726,11 +726,6 @@ h1.navbar-brand {
 }
 /* 10 ------- Testimonial Section Styles --------*/
 
-.testimonial {
-    background: url(../../images/background/3.jpg) no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-}
 .pattern-overlay {
     background-color: rgba(0, 0, 0, 0.7);
 }
@@ -889,9 +884,6 @@ h1.navbar-brand {
 .polmo-lite-page .overlay {
     background-color: rgba(13, 71, 161, 0.85);
 }
-.polmo-lite-page .section-padding {
-    padding: 1.5em 0;
-}
 .polmo-lite-page .section-title {
     color: #fff;
     font-size: 1.5625rem;
@@ -899,6 +891,15 @@ h1.navbar-brand {
     font-weight: 900;
     padding-bottom: .5rem;
     text-transform: uppercase;
+}
+.polmo-lite-page .section-padding{
+    padding: 65px 0px 0px;
+}
+.logged-in.admin-bar .polmo-lite-page .section-padding{
+    padding: 65px 0px 0px;
+}
+.polmo-lite-page .breadcrumb-trail.breadcrumbs{
+    margin: -25px 0;
 }
 .polmo-lite-page .breadcrumb {
     background-color: transparent;
