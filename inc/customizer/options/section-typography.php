@@ -115,7 +115,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'type'     	  => 'slider',
 	'settings'    => 'font_size_site_title',
-	'label'       =>  esc_attr__( 'Site title', 'polmo-lite' ),
+	'label'       =>  esc_attr__( 'Site Title', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_font_sizes',
 	'default'     => '36',
 	'priority'    => 10,
@@ -127,7 +127,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	  => 'auto',
 	'output'      => array(
 		array(
-			'element'  => '.site-title',
+			'element'  => 'h1.navbar-brand',
 			'property' => 'font-size',
 			'units'    => 'px',
 		),
@@ -180,7 +180,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'type'     	  => 'slider',
-	'settings'    => 'font_size_menu_top_items',
+	'settings'    => 'font_size_sub_menu_items',
 	'label'       =>  esc_attr__( 'Submenu items', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_font_sizes',
 	'default'     => '13',
@@ -224,7 +224,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	  => 'auto',
 	'output'      => array(
 		array(
-			'element'  => '.archive article .entry-title, .category article .entry-title',
+			'element'  => '.archive article .entry-title, .category article .entry-title,.blog .entry-title, .entry-title',
 			'property' => 'font-size',
 			'units'    => 'px',
 		),
@@ -261,27 +261,6 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'default'     => '<div style="text-transform:uppercase;font-weight:600;background: #ccd6de;color: #1c1c1c;padding: 10px 20px;text-align: center;margin: 30px 0 15px 0;letter-spacing: 1px;border: 1px solid #ccc6c6;">' . esc_html__( 'Footer area', 'polmo-lite' ) . '</div>',
 	'priority'    => 10,
 ) );
-Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
-	'type'     	  => 'slider',
-	'settings'    => 'font_size_footer_social_icons',
-	'label'       =>  esc_attr__( 'Footer Social Icons', 'polmo-lite' ),
-	'section'     => 'polmo_lite_section_font_sizes',
-	'default'     => '16',
-	'priority'    => 10,
-	'choices'   => array(
-		'min'  => 10,
-		'max'  => 30,
-		'step' => 1,
-	),
-	'transport'	  => 'auto',
-	'output'      => array(
-		array(
-			'element'  => '.footer-social a',
-			'property' => 'font-size',
-			'units'    => 'px',
-		),
-	),	
-) );
 
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'type'     	  => 'slider',
@@ -298,7 +277,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	  => 'auto',
 	'output'      => array(
 		array(
-			'element'  => 'footer.site-footer',
+			'element'  => '.footer-bottom',
 			'property' => 'font-size',
 			'units'    => 'px',
 		),
