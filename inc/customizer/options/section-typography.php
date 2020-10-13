@@ -22,8 +22,8 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'label'       => esc_attr__( 'Headings', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_fonts',
 	'default'     => array(
-		'font-family'    => 'Lato',
-		'variant'        => '300,500',
+		'font-family'    => 'Belgrano',
+		'variant'        => '300,400,700,900',
 	),
 	'priority'    => 1033,
 	'output'      => array(
@@ -44,8 +44,8 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'label'       => esc_attr__( 'Body', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_fonts',
 	'default'     => array(
-		'font-family'    => 'Montserrat',
-		'variant'        => 'regular',
+		'font-family'    => 'Lato',
+		'variant'        => '300,400,700,900',
 	),
 	'priority'    => 10,
 	'output'      => array(
