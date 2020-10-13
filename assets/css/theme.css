@@ -1935,10 +1935,10 @@ ul.bxslider {
   color: #fff;
 }
 
-.logged-in.admin-bar header#masthead{
+/* .logged-in.admin-bar header#masthead{
     top: 32px;
 }
-
+ */
 
 .layout-grid article.post{
     padding: 0;
@@ -1976,6 +1976,13 @@ ul.bxslider {
 }
 .blog .layout-grid .post-content{
     padding: 20px;
+}
+.blog .layout-grid .post-head .media-body{
+    padding-left: 20px;
+}
+.layout-grid .entry-title{
+    font-size: 1.5em;
+    padding-top: 5px;
 }
 .blog-posts .layout-two-columns{
     padding-right: 30px;

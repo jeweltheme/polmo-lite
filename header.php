@@ -20,14 +20,16 @@
 
 <body <?php body_class(); ?>>
 
-	<header id="masthead" class="masthead navbar navbar-default navbar-fixed-top">
+	<header id="masthead" class="masthead navbar navbar-default navbar-expand-md navbar-fixed-top">
 		<div class="<?php echo esc_attr( polmo_lite_menu_container() ); ?>">
 			<!-- Brand and toggle get grouped for better mobile display -->
 
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu">
-					<i class="fa fa-bars"></i>
-				</button>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </button>
 
 					<?php polmo_lite_the_custom_logo(); ?>
 
@@ -44,22 +46,21 @@
 			</div>
 
 
-			<nav id="main-menu" class="navbar-collapse pull-right">
+			<nav id="main-menu" class="collapse navbar-collapse main-menu pull-right" role="navigation" aria-label="<?php _e( 'Main Menu', 'polmo-lite' ); ?>">
 				<?php 
 				wp_nav_menu( array(
-					'menu'              => 'primary',
-					'theme_location'    => 'primary',
-					'depth'             => 4,
-					'container'         => 'ul',
-					'fallback_cb'       => 'wp_page_menu',
-					'container_class'   => 'nav navbar-nav',
-					'container_id'    	=> 'main-menu',
-					'menu_class'      	=> 'nav navbar-nav',
-					'menu_id'         	=> '',
-					'depth'           	=> 4,
+						'menu'              => 'primary',
+						'theme_location'    => 'primary',
+						'depth'             => 4,
+						'container'         => 'ul',
+						'fallback_cb'       => 'wp_page_menu',
+						'container_class'   => '',
+						'container_id'    	=> 'main-menu',
+						'menu_class'        => 'navbar-nav pwpt-main-menu',
+						'menu_id'         	=> '',
+						'depth'           	=> 4,
 					)
-				);
-				?>
+				); ?>
 			</nav> <!-- /.navbar-collapse  -->
 			<?php //wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 
