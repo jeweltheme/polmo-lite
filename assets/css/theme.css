@@ -1108,7 +1108,7 @@ h1.navbar-brand {
   padding-top: 12px;
 }
 .page-navigation {
-    padding: 3.5rem 0 0;
+    padding: 0 0 3.5rem 0;
 }
 .pagination {
     margin: 0px;
@@ -1997,7 +1997,8 @@ ul.bxslider {
 .blog .layout-grid .post-head .media-body{
     padding-left: 20px;
 }
-.layout-grid .entry-title{
+.layout-grid .entry-title,
+.layout-two-columns .entry-title{
     font-size: 1.5em;
     padding-top: 5px;
 }

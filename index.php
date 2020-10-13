@@ -32,14 +32,13 @@ $layout = polmo_lite_blog_layout();
 						 */
 							get_template_part( 'template-parts/content', get_post_format() );
 						}
+
+						echo function_exists('polmo_lite_pagination') ? polmo_lite_pagination() : posts_nav_link();
+
 					?>
 				</div>
 
-				<?php 
-					
-					echo function_exists('polmo_lite_pagination') ? polmo_lite_pagination() : posts_nav_link();
-
-				} else { 
+				<?php } else { 
 					get_template_part( 'template-parts/content', 'none' ); 
 				}
 			?>
