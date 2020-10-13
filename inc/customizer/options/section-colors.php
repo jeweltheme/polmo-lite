@@ -70,7 +70,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	 => 'auto',
 	'output' => array(
 		array(
-			'element'  => '.header-default a.navbar-brand',
+			'element'  => '.navbar-brand a',
 			'property' => 'color',
 		),
 	),			
@@ -113,7 +113,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	 => 'auto',
 	'output' => array(
 		array(
-			'element'  => '.main-header .site-description',
+			'element'  => '.site-description',
 			'property' => 'color',
 		),
 	),
@@ -155,7 +155,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	 => 'auto',
 	'output' => array(
 		array(
-			'element'  => '.main-header #main-menu a, .header-default .fa-search',
+			'element'  => '#main-menu .navbar-nav>li>a',
 			'property' => 'color',
 		),
 	),
@@ -201,7 +201,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	 => 'auto',
 	'output' => array(
 		array(
-			'element'  => '.main-header',
+			'element'  => '.masthead',
 			'property' => 'background-color',
 		),
 	),
@@ -298,7 +298,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	 => 'auto',
 	'output' => array(
 		array(
-			'element'  => '.page-header .page-title',
+			'element'  => '.archive article .entry-title a, .category article .entry-title a,.blog .entry-title a',
 			'property' => 'color',
 		),
 	),
@@ -312,25 +312,25 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	 => 'auto',
 	'output' => array(
 		array(
-			'element'  => '.blog-posts .entry-title',
+			'element'  => '.single .entry-title',
 			'property' => 'color',
 		),
 	),
 ) );
-Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
-	'type'        => 'color',
-	'settings'    => 'color_meta_cat_bg',
-	'label'       => esc_attr__( 'Categories (single and archives)', 'polmo-lite' ),
-	'section'     => 'polmo_lite_section_colors_blog',
-	'default'     => '#fff',
-	'transport'	 => 'auto',
-	'output' => array(
-		array(
-			'element'  => '.blog-posts .cat-links',
-			'property' => 'background-color',
-		),
-	),
-) );
+// Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
+// 	'type'        => 'color',
+// 	'settings'    => 'color_meta_cat_bg',
+// 	'label'       => esc_attr__( 'Categories (single and archives)', 'polmo-lite' ),
+// 	'section'     => 'polmo_lite_section_colors_blog',
+// 	'default'     => '#fff',
+// 	'transport'	 => 'auto',
+// 	'output' => array(
+// 		array(
+// 			'element'  => '.blog-posts .cat-links',
+// 			'property' => 'background-color',
+// 		),
+// 	),
+// ) );
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'type'        => 'color',
 	'settings'    => 'color_meta_text',
@@ -340,7 +340,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	 => 'auto',
 	'output' => array(
 		array(
-			'element'  => '.single .entry-meta',
+			'element'  => '.post-meta',
 			'property' => 'color',
 		),
 	),
@@ -354,7 +354,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	 => 'auto',
 	'output' => array(
 		array(
-			'element'  => '.single .entry-meta a',
+			'element'  => '.post-meta a',
 			'property' => 'color',
 		),
 	),
