@@ -858,7 +858,7 @@ h1.navbar-brand {
     color: #a7a7a8;
     display: inline-block;
     font-size: .8125em;
-    padding: 34px 8px;
+    padding: 10px;
     position: relative;
 }
 .breadcrumb li:first-child {
@@ -895,7 +895,7 @@ h1.navbar-brand {
     padding: 65px 0px 0px;
 }
 .logged-in.admin-bar .polmo-lite-page .section-padding{
-    padding: 65px 0px 0px;
+    padding: 20px 0px 0px;
 }
 .polmo-lite-page .breadcrumb-trail.breadcrumbs{
     margin: -25px 0;
