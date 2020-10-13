@@ -1,5 +1,55 @@
 <?php
 
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
+
+function polmo_lite_body_classes( $classes ) {
+	// Adds a class of hfeed to non-singular pages.
+	if ( ! is_singular() ) {
+		$classes[] = 'hfeed';
+	}
+
+	//Menu type
+	$menu_layout = polmo_lite_menu_layout();
+	$classes[] 	= $menu_layout['type'];
+	$classes[] 	= $menu_layout['contained'];
+
+	//Sticky menu
+	$sticky 	= get_theme_mod('sticky_menu', 'sticky-header');
+	$classes[] 	= esc_attr( $sticky );	
+
+
+	// primary type
+	if ( is_home() ){
+		$layout = polmo_lite_blog_layout();
+		$classes[] = $layout[ 'type' ];
+	}		
+
+	if ( class_exists( 'WooCommerce' ) ) {
+		$check = polmo_lite_wc_archive_check();
+		
+		if ( $check ) {
+			$classes[] = 'woocommerce-product-loop';
+		}
+	}
+
+
+	// Adds a class of no-sidebar when there is no sidebar present.
+	if ( ! is_active_sidebar( 'blog-sidebar' ) ) {
+		$classes[] = 'no-sidebar';
+	}
+
+	return $classes;
+}
+add_filter( 'body_class', 'polmo_lite_body_classes' );
+
+
+
 /**
  * Polmo Lite Excerpt Length
  * @since Polmo Lite 1.0.0
@@ -211,4 +261,15 @@ function polmo_lite_post_date(){
 		</div><!-- /.entry-date -->
 	<?php 
 	} 
+}
+
+/**
+ * Returns true if current page is shop, product archive or product tag
+ */
+function polmo_lite_wc_archive_check() {
+    if ( is_shop() || is_product_category() || is_product_tag() ) {
+        return true;
+    } else {
+        return false;
+    }
 }

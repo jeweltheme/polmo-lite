@@ -21,7 +21,7 @@
 <body <?php body_class(); ?>>
 
 	<header id="masthead" class="masthead navbar navbar-default navbar-fixed-top">
-		<div class="container">
+		<div class="<?php echo esc_attr( polmo_lite_menu_container() ); ?>">
 			<!-- Brand and toggle get grouped for better mobile display -->
 
 			<div class="navbar-header">

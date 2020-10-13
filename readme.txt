@@ -122,4 +122,15 @@ https://www.flickr.com/photos/jemeeroy/25073717594 - Public Domain CC0 License
 
 
 
-For any help you can mail us at jwthemeltd[at]gmail.com
+For any help you can mail us at support[at]prowptheme.com
+
+
+
+
+
+== Changelog ==
+= 4.0.2 - Oct 13, 2020 =
+* Updated - Bootstrap Library Updated
+* Updated - minimize the scripts loading, page speed loading is fast now
+* Removed - Removed Unnecessary images,scripts and styles
+
