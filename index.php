@@ -18,8 +18,8 @@ $layout = polmo_lite_blog_layout();
 	<div class="<?php echo esc_attr( $layout['type'] ); ?> <?php echo esc_attr( $layout['cols'] ); ?>">
 
 				
-		<?php if($layout['type'] != "layout-grid"){?>
-			<div class="col-md-9">
+		<?php if(($layout['type'] != "layout-grid") || ($layout['type'] == "layout-two-columns")){?>
+			<!-- <div class="col-md-9"> -->
 		<?php } ?>	
 		
 
@@ -45,8 +45,8 @@ $layout = polmo_lite_blog_layout();
 			?>
 			
 
-		<?php if($layout['type'] != "layout-grid"){?>
-			</div>
+		<?php if(($layout['type'] != "layout-grid") || ($layout['type'] != "layout-two-columns")){?>
+			<!-- </div> -->
 		<?php } ?>
 
 	</div>

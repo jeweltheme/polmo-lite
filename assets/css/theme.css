@@ -869,8 +869,7 @@ h1.navbar-brand {
     background: transparent;
     height: 3px;
     width: 16px;
-    left: 8px;
-    bottom: 0px;
+    left: -8px;
     position: absolute;
 }
 .breadcrumb li.active:before {
@@ -1996,6 +1995,11 @@ ul.bxslider {
 }
 .blog-posts .layout-two-columns{
     padding-right: 30px;
+}
+.layout-two-columns .main-content article{
+    padding-top: 0;
+    padding-right: 30px;
+    border-bottom: 0;
 }
 @media (max-width: 768px) {
     article.post {

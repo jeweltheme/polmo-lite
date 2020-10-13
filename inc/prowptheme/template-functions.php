@@ -132,7 +132,7 @@ if ( !function_exists( 'polmo_lite_blog_layout' ) ) {
 			$cols 		= 'col-md-12';
 			$sidebar	= false;
 		} elseif ( $layout == 'layout-classic' || $layout == 'layout-two-columns' ) {
-			$cols 		= 'col-lg-9';
+			$cols 		= 'col-md-9';
 			$sidebar 	= true;
 		} else {
 			$cols 		= 'col-md-9';
