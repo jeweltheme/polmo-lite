@@ -183,7 +183,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'settings'    => 'font_size_sub_menu_items',
 	'label'       =>  esc_attr__( 'Submenu items', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_font_sizes',
-	'default'     => '13',
+	'default'     => '16',
 	'priority'    => 10,
 	'choices'   => array(
 		'min'  => 10,

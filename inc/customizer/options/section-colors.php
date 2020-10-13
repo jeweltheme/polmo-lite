@@ -24,15 +24,15 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'transport'	 => 'auto',
 	'output' => array(
 		array(
-			'element'  => '.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,.product div.entry-summary p.price, .product div.entry-summary span.price, .byline a:hover,.single-post .posted-on a,.blog-loop .posted-on a,.entry-title a:hover,.polmo_lite_recent_entries .post-date,.menuStyle3 .top-bar .contact-item .fa,.widget_categories li:hover a,.post-navigation a, .call-to-action .btn:hover, .widget_categories li:hover a, .widget_categories li:hover i, .widget_archive li:hover a, .widget_archive li:hover i, .copyright a, header .navbar .navbar-collapse .navbar-nav li a:hover, header .navbar .navbar-collapse .navbar-nav li a:focus, header .navbar .navbar-collapse .navbar-nav li.current-menu-item a, .banner-contents .btn, .entry-footer .read-more:hover,.respond a,.author-details a.author-link, .post-navigation a,.navbar .navbar-collapse .navbar-nav li.current-menu-item a',
+			'element'  => '.woocommerce div.product .woocommerce-tabs ul.tabs li.active a,.product div.entry-summary p.price, .product div.entry-summary span.price, .byline a:hover,.single-post .posted-on a,.blog-loop .posted-on a,.entry-title a:hover,.polmo_lite_recent_entries .post-date,.menuStyle3 .top-bar .contact-item .fa,.widget_categories li:hover a,.post-navigation a, .call-to-action .btn:hover, .widget_categories li:hover a, .widget_categories li:hover i, .widget_archive li:hover a, .widget_archive li:hover i, .copyright a, header .navbar .navbar-collapse .navbar-nav li a:hover, header .navbar .navbar-collapse .navbar-nav li a:focus, .banner-contents .btn, .entry-footer .read-more:hover,.respond a,.author-details a.author-link, .post-navigation a,#main-menu .navbar-nav .current-menu-item a, .widget li a, .read-more,.footer-top a:hover, .search-form .search-field, .footer-bottom, a',
 			'property' => 'color',
 		),
 		array(
-			'element'  => '.product .single_add_to_cart_button.button.alt,.button,input[type="button"],input[type="reset"],input[type="submit"],.entry-footer .read-more',
+			'element'  => '.product .single_add_to_cart_button.button.alt,.button,input[type="button"],input[type="reset"],input[type="submit"],.entry-footer .read-more, .search-form .search-field',
 			'property' => 'border-color',
 		),		
 		array(
-			'element'  => '.woocommerce-checkout button.button.alt,.woocommerce-checkout button.button.alt:hover,.woocommerce-cart .cart-collaterals .cart_totals .button:hover,.woocommerce-cart .cart-collaterals .cart_totals .button,.product .single_add_to_cart_button.button.alt:hover,.product .single_add_to_cart_button.button.alt,.woocommerce ul.products li.product .button,.comments-area .comment-reply-link:hover,button,.button,input[type="button"],input[type="reset"],input[type="submit"],.entry-footer .read-more, .page-navigation a, .comment-form input[type="submit"],.comment-content a.reply-btn, aside .widget-title:before',
+			'element'  => '.woocommerce-checkout button.button.alt,.woocommerce-checkout button.button.alt:hover,.woocommerce-cart .cart-collaterals .cart_totals .button:hover,.woocommerce-cart .cart-collaterals .cart_totals .button,.product .single_add_to_cart_button.button.alt:hover,.product .single_add_to_cart_button.button.alt,.woocommerce ul.products li.product .button,.comments-area .comment-reply-link:hover,button,.button,input[type="button"],input[type="reset"],input[type="submit"],.entry-footer .read-more, .page-navigation a, .comment-form input[type="submit"],.comment-content a.reply-btn, aside .widget-title:before,.post-head .entry-date,.scroll-to-top',
 			'property' => 'background-color',
 		),		
 	),			

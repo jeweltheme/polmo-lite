@@ -217,7 +217,7 @@ h1.navbar-brand {
     box-shadow: none;
     color: #fff;
     font-family: 'Lato';
-    font-size: .93em;
+    font-size: 1em;
     font-weight: 400;
     line-height: 70px;
     padding: 0 20px;
@@ -678,7 +678,7 @@ h1.navbar-brand {
     color: #e74c3c !important;
 }
 .blog .entry-content {
-    font-size: .8125em;
+    font-size: 1em;
     padding-top: 10px;
 }
 
