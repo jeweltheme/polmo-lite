@@ -321,7 +321,7 @@ function polmo_lite_footer_credit(){
 
     if($copyright_text ==''){ ?>
 
-		<div class="copy-right float-right">
+		<div class="copy-right float-left">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'brooklyn-lite' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */

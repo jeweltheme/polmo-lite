@@ -38,16 +38,14 @@
 
 	<div class="footer-bottom">
 		<div class="container">
-			<div class="footer-menu float-left">
-				<?php 
-				if ( is_active_sidebar( 'footer-menu' ) ) { 
-					dynamic_sidebar('footer-menu'); 
-				} 
-				?>
-
-			</div><!-- /.footer-menu -->
 			
 			<?php echo polmo_lite_footer_credit();?>
+			
+			<div class="footer-menu float-right">
+			<?php if ( is_active_sidebar( 'footer-menu' ) ) { 
+				dynamic_sidebar('footer-menu'); 
+			} ?>			
+			</div><!-- /.footer-menu -->
 
 		</div><!-- /.container -->
 	</div><!-- /.footer-bottom -->

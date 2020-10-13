@@ -1681,10 +1681,11 @@ footer .widget.widget_calendar a {
 
 .footer-bottom {
     background: #282a2e;
-    border-bottom: 2px solid #fff;
     color: #686c77;
-    font-size: .8125em;
-    padding: 28px 0px;
+    font-family: 'Lato';
+    font-size: 1.2em;
+    line-height: 25px;
+    padding: 30px 0px 50px;
 }
 .footer-bottom .widget {
     margin: 0;
