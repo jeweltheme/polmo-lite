@@ -22,8 +22,8 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'label'       => esc_attr__( 'Headings', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_fonts',
 	'default'     => array(
-		'font-family'    => 'Muli',
-		'variant'        => '500',
+		'font-family'    => 'Lato',
+		'variant'        => '300,500',
 	),
 	'priority'    => 1033,
 	'output'      => array(
@@ -267,7 +267,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'settings'    => 'font_size_footer_credits',
 	'label'       =>  esc_attr__( 'Footer Copyrights', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_font_sizes',
-	'default'     => '13',
+	'default'     => '16',
 	'priority'    => 10,
 	'choices'   => array(
 		'min'  => 10,
