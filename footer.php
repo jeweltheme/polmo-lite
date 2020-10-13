@@ -38,7 +38,7 @@
 
 	<div class="footer-bottom">
 		<div class="container">
-			<div class="footer-menu pull-left">
+			<div class="footer-menu float-left">
 				<?php 
 				if ( is_active_sidebar( 'footer-menu' ) ) { 
 					dynamic_sidebar('footer-menu'); 

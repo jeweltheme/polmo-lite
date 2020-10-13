@@ -55,11 +55,3 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	add_action( 'wp_head', 'polmo_lite_render_title' );
 endif;
 
-
-// Footer Credit Link
-function polmo_lite_footer_credit(){ ?>
-	<div class="copy-right pull-right">&copy; <?php echo bloginfo('name');?> <?php echo date_i18n('Y'); ?>
-		<?php echo esc_html__(" - Designed and Developed by","polmo-lite");?> 
-		<a href="<?php echo esc_url("https://prowptheme.com/themes/polmo-business-wordpress-theme/","polmo-lite");?>" target="_blank" rel="nofollow"><?php echo esc_html__("ProWPTheme","polmo-lite");?></a> 
-	</div>
-<?php } 

@@ -116,9 +116,6 @@ function polmo_lite_read_more(){
 
 
 
-
-
-
 /**
  * Blog layout
  */
@@ -313,4 +310,32 @@ if(!( function_exists('polmo_lite_pagination') )){
 			echo "</ul></nav>";
 		}
 	}
+}
+
+
+
+
+// Copyright Text
+function polmo_lite_footer_credit(){
+    $copyright_text = get_theme_mod( 'copyright_text' );
+
+    if($copyright_text ==''){ ?>
+
+		<div class="copy-right float-right">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'brooklyn-lite' ) ); ?>">
+				<?php
+				/* translators: %s: CMS name, i.e. WordPress. */
+				printf( esc_html__( 'Proudly powered by %s', 'brooklyn-lite' ), 'WordPress' );
+				?>
+			</a>
+			<span class="sep"> | </span>
+				<?php
+				/* translators: 1: Theme name, 2: Theme author. */
+				printf( esc_html__( 'Theme: %2$s by %1$s.', 'brooklyn-lite' ), 'ProWPTheme', '<a href="' . esc_url('https://prowptheme.com/themes/polmo-business-wordpress-theme/') . '" rel="nofollow" target="_blank">Polmo Lite</a>' );
+				?>
+		</div><!-- .site-info -->
+
+    <?php } else {
+		echo $copyright_text;
+    }
 }
