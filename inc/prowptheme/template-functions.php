@@ -273,3 +273,50 @@ function polmo_lite_wc_archive_check() {
         return false;
     }
 }
+
+
+
+/**
+ * Returns Custom Blog Posts Pagination
+ * @author Jewel Theme
+ * @since v1.0.0
+ */
+
+if(!( function_exists('polmo_lite_pagination') )){
+	function polmo_lite_pagination($pages = '', $range = 2){
+		$showitems = ($range * 1)+1;
+
+		global $paged;
+		if(empty($paged)) $paged = 1;
+
+		if($pages == ''){
+			global $wp_query;
+			$pages = $wp_query->max_num_pages;
+				if(!$pages) {
+					$pages = 1;
+				}
+		}
+
+		if(1 != $pages){
+			echo '<nav class="page-navigation"><ul class="pagination">';
+
+			if($paged > 1 && $paged > $range+1 && $showitems < $pages){
+				echo '<li class="page-item"><a href="'.get_pagenum_link(1).'" class="page-link prev"><i class="fa fa-arrow-left"></i> ' . esc_html__('Prev','brooklyn-lite') . '</a></li>';
+			}
+
+			for ($i=1; $i <= $pages; $i++)
+			{
+				if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+				{
+					echo ($paged == $i)? "<li class='page-item'><a href='#' class='page-link active'>".$i."</a></li>":"<li class='page-item'><a class='page-link' href='".get_pagenum_link($i)."'>".$i."</a></li>";
+				}
+			}
+
+			if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages){
+				echo '<li class="page-item"><a href="'.get_pagenum_link($pages).'" class="page-link next">' . esc_html__('Next','brooklyn-lite') . ' <i class="fa fa-arrow-right"></i></a></li>';
+			}
+
+			echo "</ul></nav>";
+		}
+	}
+}

@@ -20,7 +20,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'settings'    => 'color_primary',
 	'label'       => esc_attr__( 'Primary color', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_colors',
-	'default'     => '#ffd200',
+	'default'     => '#e74c3c',
 	'transport'	 => 'auto',
 	'output' => array(
 		array(

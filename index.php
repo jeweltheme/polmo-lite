@@ -21,23 +21,29 @@ $layout = polmo_lite_blog_layout();
 		<?php if($layout['type'] != "layout-grid"){?>
 			<div class="col-md-9">
 		<?php } ?>	
-		<div class="row">
+		
 
-			<?php 
-				if ( have_posts() ) { while ( have_posts() ) { the_post(); 
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'template-parts/content', get_post_format() );
+			<?php if ( have_posts() ) {?>
+				<div class="row">
+			 		<?php while ( have_posts() ) { the_post(); 
+						/* Include the Post-Format-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+						 */
+							get_template_part( 'template-parts/content', get_post_format() );
 						}
-						the_posts_navigation();
+					?>
+				</div>
 
-					} else { 
-						get_template_part( 'template-parts/content', 'none' ); 
-					}
+				<?php 
+					
+					echo function_exists('polmo_lite_pagination') ? polmo_lite_pagination() : posts_nav_link();
+
+				} else { 
+					get_template_part( 'template-parts/content', 'none' ); 
+				}
 			?>
-			</div>
+			
 
 		<?php if($layout['type'] != "layout-grid"){?>
 			</div>
