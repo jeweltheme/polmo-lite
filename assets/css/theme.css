@@ -1028,9 +1028,6 @@ h1.navbar-brand {
     margin-top: -15px;
     margin-right: 10px; 
 }
-.post-meta .author {
-    font-style: italic;
-}
 .entry-content {
     font-size: .8125em;
     line-height: 21px;
@@ -1320,7 +1317,8 @@ h1.navbar-brand {
 }
 /* 15 ------ Sidebar Styles ------*/
 .widget li{
-    word-break: break-all;
+    word-break: break-word;
+    line-height: 30px;
 }
 .widget.widget_polmo_lite_recent_posts {
     padding-bottom: 0 !important;
@@ -1332,12 +1330,7 @@ h1.navbar-brand {
     margin-bottom: 0;
     padding-bottom: 85px;
 }
-.sidebar .widget-title {
-    font-size: 1.25em;
-    font-weight: 300;
-    margin: 0;
-    padding-bottom: 20px;
-}
+
 .sidebar article {
     border: none;
     clear: both;
@@ -1431,7 +1424,7 @@ h1.navbar-brand {
 .cat-item a {
     color: #a7a7a8;
     display: block;
-    font-size: .8125em;
+    font-size: 1.1em;
 }
 .archive-list a:hover,
 .cat-item a:hover {
@@ -1443,7 +1436,6 @@ h1.navbar-brand {
 }
 li.cat-item {
     display: block;
-    line-height: 23px;
 }
 .widget.widget_tag_cloud a,
 .recentcomments a {
@@ -1502,14 +1494,15 @@ footer {
     color: #fff;
     clear: both;
 }
-footer .widget-title {
-    font-size: 1em;
-    font-weight: 300;
+footer .widget-title, .sidebar .widget-title {
+    font-size: 1.5em;
+    font-weight: 600;
     padding-bottom: 8px;
 }
 .footer-top a {
     color: #98a0a8;
-    font-size: 13px;
+    font-size: 1em;
+    line-height: 26px;
 }
 .footer-top a:hover {
     color: #e74c3c;
@@ -2006,7 +1999,7 @@ ul.bxslider {
 .blog-posts .layout-two-columns{
     padding-right: 30px;
 }
-.layout-two-columns .main-content article{
+.layout-two-columns article{
     padding-top: 0;
     padding-right: 30px;
     border-bottom: 0;
