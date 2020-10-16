@@ -339,3 +339,40 @@ function polmo_lite_footer_credit(){
 		echo $copyright_text;
     }
 }
+
+
+
+
+function polmo_lite_core_escape($str = '', $type = '', $context = ''){
+    if(trim($str)){
+        if($type == 'strip'){
+            if($context == 'widget_before_after'){
+                return strip_tags($str, '<div><ul><li>');
+            }elseif($context == 'widget_title_before_after'){
+                return strip_tags($str, '<div><ul><li><h3><h4><h5><h6><strong><em><i><b><span>');
+            }elseif(substr($context, 0, 1) == '<'){
+                return strip_tags($str, $context);
+            } else {
+                return strip_tags($str);
+            }
+        } elseif($type == 'bal' || $type == 'balance') {
+            return balanceTags($str);
+        } elseif($type == 'attr') {
+            return esc_attr($str);
+        } elseif($type == 'html') {
+            return esc_html($str);
+        } elseif($type == 'url') {
+            return esc_url($str);
+        } elseif($type == 'js') {
+            return esc_js($str);
+        } elseif($type == 'textarea') {
+            return esc_textarea($str);
+        } elseif($type == 'sql') {
+            return esc_sql($str);
+        } elseif($type == 'post') {
+            return wp_kses_post($str);
+        }
+    }
+    
+    return $str;
+}

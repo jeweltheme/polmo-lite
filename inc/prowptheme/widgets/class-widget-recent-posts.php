@@ -1,155 +1,133 @@
 <?php
 /**
- * ProWPTheme Recent Posts widget
- *
- * @package WordPress
- * @subpackage Widgets
- * @since 4.4.0
- */
+* Polmo Lite Recent Posts Widget    
+* @package Polmo Lite WP
+* @author Liton Arefin 
+* @copyright Copyright (c) 2015 - 2020 Liton Arefin
+* @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or Later
+*/
 
 
-// register Polmo Popular Posts widget
-function polmo_lite_register_recent_posts(){
-     register_widget( 'Polmo_Lite_Recent_Posts' );
+add_action('widgets_init', 'polmo_lite_recent_posts_widget');
+function polmo_lite_recent_posts_widget(){
+	register_widget('Polmo_Lite_recent_posts');
 }
 
-// register Polmo Popular Posts widget
-add_action( 'widgets_init', 'polmo_lite_register_recent_posts');
+class Polmo_Lite_recent_posts extends WP_Widget{
 
+	/* Widget setup */
+	function __construct(){
 
-class Polmo_Lite_Recent_Posts extends WP_Widget {
-
-	/**
-	 * Sets up a new Recent Posts widget instance.
-	 *
-	 * @since 2.8.0
-	 */
-	public function __construct() {
-		$widget_ops = array(
-			'classname' 					=> 'polmo_lite_recent_entries',
-			'description' 					=> __( 'Recent posts with thumbnails.', 'polmo-lite' ),
-			'customize_selective_refresh' 	=> true,
+		/* Widget settings */
+		$widget_ops = array( 
+			'classname'   => 'popular-posts-widget', 
+			'description' => __('A widget that show recent posts', 'polmo-lite') 
 		);
-		parent::__construct( 'polmo-lite-recent-posts', __( 'Polmo Lite: Recent Posts', 'polmo-lite' ), $widget_ops );
-		$this->alt_option_name = 'polmo_lite_recent_entries';
+
+		/* Widget control settings */
+		$control_ops = array( 
+			'width'   => 250, 
+			'height'  => 350, 
+			'id_base' => 'post-recent' 
+		);
+
+		/* Create the widget */
+		parent::__construct(
+			'post-recent', 
+			'&#x1F536; '. esc_html__('Polmo Lite:', 'polmo-lite') . ' &raquo; ' . esc_html__('Latest Posts ', 'polmo-lite'),
+			$widget_ops, $control_ops
+		);
 	}
 
-	/**
-	 * Outputs the content for the current Recent Posts widget instance.
-	 *
-	 * @since 2.8.0
-	 *
-	 * @param array $args     Display arguments including 'before_title', 'after_title',
-	 *                        'before_widget', and 'after_widget'.
-	 * @param array $instance Settings for the current Recent Posts widget instance.
-	 */
-	public function widget( $args, $instance ) {
-		if ( ! isset( $args['widget_id'] ) ) {
-			$args['widget_id'] = $this->id;
-		}
 
-		$title = ( ! empty( $instance['title'] ) ) ? $instance['title'] : '';
+	/* Display the widget on the screen */
+    function widget ($args, $instance) {
 
-		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
-		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
+		$title = $instance['title'];
+		$num   = $instance['num'];
+        
+        echo polmo_lite_core_escape($args['before_widget']);
+        
+		if ( ! empty( $title ) ) echo polmo_lite_core_escape($args['before_title'] . apply_filters( 'widget_title', $title ). $args['after_title']);
+		
+		echo '<div class="widget-details text-left">';
 
-		$number = ( ! empty( $instance['number'] ) ) ? absint( $instance['number'] ) : 5;
-		if ( ! $number ) {
-			$number = 5;
-		}
-		$show_date = isset( $instance['show_date'] ) ? $instance['show_date'] : false;
+		$recentPosts = '';
+		$temp = $recentPosts;
+		$recentPosts = new WP_Query(array('showposts' => intval($num)));
+        while ($recentPosts->have_posts()) : $recentPosts->the_post(); 
 
-		/**
-		 * Filters the arguments for the Recent Posts widget.
-		 *
-		 * @since 3.4.0
-		 * @since 4.9.0 Added the `$instance` parameter.
-		 *
-		 * @see WP_Query::get_posts()
-		 *
-		 * @param array $args     An array of arguments used to retrieve the recent posts.
-		 * @param array $instance Array of settings for the current widget.
-		 */
-		$r = new WP_Query( apply_filters( 'polmo_lite_widget_posts_args', array(
-			'posts_per_page'      => $number,
-			'no_found_rows'       => true,
-			'post_stairis'         => 'publish',
-			'ignore_sticky_posts' => true,
-		), $instance ) );
+            $img_url = false;
+            $size = 'thumbnail';
+            $img_id = get_post_thumbnail_id($recentPosts->post->ID);
+            $photo = wp_get_attachment_image_src($img_id, $size);
+            $img_url = (isset($photo[0])) ? $photo[0] : '';
+            
+            $has_img = ($img_url) ? 'has-img' : '';
+			?>
 
-		if ( ! $r->have_posts() ) {
-			return;
-		}
-		?>
-		<?php echo $args['before_widget']; ?>
-		<?php
-		if ( $title ) {
-			echo $args['before_title'] . $title . $args['after_title'];
-		}
-		?>
-		<ul>
-			<?php foreach ( $r->posts as $recent_post ) : ?>
-				<?php
-				$post_title = get_the_title( $recent_post->ID );
-				$title      = ( ! empty( $post_title ) ) ? $post_title : '';
-				?>
-				<li>
-					<div class="row">
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<?php echo get_the_post_thumbnail( $recent_post->ID, 'thumbnail' ); ?>
-						</div>
-						<div class="col-md-8 col-sm-8 col-xs-8">
-							<?php if ( $show_date ) : ?>
-								<span class="post-date"><?php echo get_the_date( '', $recent_post->ID ); ?></span>
-							<?php endif; ?>							
-							<h5><a href="<?php the_permalink( $recent_post->ID ); ?>"><?php echo $title ; ?></a></h5>
-						</div>
-					</div>
-				</li>
-			<?php endforeach; ?>
-		</ul>
-		<?php
-		echo $args['after_widget'];
-	}
+	        	<article class="post type-post media">
+	        		<?php if($img_url) { ?>
+	            		<div class="entry-thumbnail media-left">
+	            			<img width="75" src="<?php echo esc_url_raw($img_url); ?>" alt="<?php echo esc_attr($recentPosts->post->post_title); ?>"/>
+	            		</div><!-- /.entry-thumbnail -->
+	            	<?php } ?>
+	        		<div class="entry-content media-body">
+	        			<h4 class="entry-title">
+	        				<a href="<?php echo get_permalink($recentPosts->post->ID); ?>">
+	        					<?php echo the_title(); ?>			
+	        				</a>
+	        			</h4><!-- /.entry-title -->
+	        			<div class="entry-meta">
+	        				<time datetime="<?php echo get_the_modified_date( 'c' );?>">
+	        					<?php echo get_the_time('j M Y', $recentPosts->post->ID); ?>		
+	        				</time>
+	        			</div><!-- /.entry-meta -->
+	        		</div><!-- /.entry-content -->
+	        	</article><!-- /.type-post -->
 
-	/**
-	 * Handles updating the settings for the current Recent Posts widget instance.
-	 *
-	 * @since 2.8.0
-	 *
-	 * @param array $new_instance New settings for this instance as input by the user via
-	 *                            WP_Widget::form().
-	 * @param array $old_instance Old settings for this instance.
-	 * @return array Updated settings to save.
-	 */
-	public function update( $new_instance, $old_instance ) {
+
+        <?php 
+
+        endwhile; 
+        $recentPosts = $temp;
+        echo '</div><!-- /.widget-details -->';
+		echo polmo_lite_core_escape($args['after_widget']);
+  	}
+
+
+	/* Update the widget settings */
+	function update($new_instance, $old_instance) {
+
 		$instance = $old_instance;
-		$instance['title'] 		= sanitize_text_field( $new_instance['title'] );
-		$instance['number'] 	= (int) $new_instance['number'];
-		$instance['show_date'] 	= isset( $new_instance['show_date'] ) ? (bool) $new_instance['show_date'] : false;
+
+		$instance['title'] = strip_tags( $new_instance['title']);
+		$instance['num']   = strip_tags( $new_instance['num']);
+
 		return $instance;
 	}
 
-	/**
-	 * Outputs the settings form for the Recent Posts widget.
-	 *
-	 * @since 2.8.0
-	 *
-	 * @param array $instance Current settings.
-	 */
-	public function form( $instance ) {
-		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 5;
-		$show_date = isset( $instance['show_date'] ) ? (bool) $instance['show_date'] : false;
-?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e( 'Title:', 'polmo-lite' ); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo $title; ?>" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e( 'Number of posts to show:', 'polmo-lite' ); ?></label>
-		<input class="tiny-text" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" step="1" min="1" value="<?php echo $number; ?>" size="3" /></p>
+	/* Displays the widget settings controls on the widget panel */
+	function form($instance) {
 
-		<p><input class="checkbox" type="checkbox"<?php checked( $show_date ); ?> id="<?php echo $this->get_field_id( 'show_date' ); ?>" name="<?php echo $this->get_field_name( 'show_date' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'show_date' ); ?>"><?php _e( 'Display post date?', 'polmo-lite' ); ?></label></p>
-<?php
+		$defaults = array( 
+			'title' => esc_html__('Latest Posts', 'polmo-lite'), 
+			'num'   => '5',
+		);
+		$instance = wp_parse_args((array) $instance, $defaults); 
+		?>
+
+		<p>
+			<label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'polmo-lite'); ?></label>
+			<input type="text" class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
+		</p>
+		
+		<p>
+			<label for="<?php echo esc_attr($this->get_field_id('num')); ?>"><?php _e('Show Count', 'polmo-lite'); ?></label>
+			<input type="text" class="widefat" id="<?php echo esc_attr($this->get_field_id('num')); ?>" name="<?php echo esc_attr($this->get_field_name('num')); ?>" value="<?php echo esc_attr($instance['num']); ?>" />
+		</p>
+	<?php
 	}
+
 }

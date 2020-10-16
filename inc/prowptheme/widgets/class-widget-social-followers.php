@@ -16,7 +16,7 @@ if(!( class_exists('Polmo_Lite_Socials_Follow_Us') )){
         public function __construct() {
             parent::__construct(
                 'polmo-lite-social-followers', // Base ID
-                'Polmo Lite: Follow Us', // Name
+                '&#x1F536; '. esc_html__('Polmo Lite:', 'polmo-lite') . ' &raquo; ' . esc_html__('Follow Us ', 'polmo-lite'),
                 array( 'description' => __( 'Polmo Follow Us Socials', 'polmo-lite' ), ) // Args
             );
         }

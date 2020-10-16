@@ -6,160 +6,134 @@
 * @copyright Copyright (c) 2015 - 2016 Liton Arefin
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or Later
 */
-if(!( class_exists('Polmo_Lite_Popular_Posts_Widget') )){
-    class Polmo_Lite_Popular_Posts_Widget extends WP_Widget {
 
-        /**
-        * Register widget with WordPress.
-        */
-        public function __construct() {
-            parent::__construct(
-                'polmo-lite-popular-posts', // Base ID
-                'Polmo Lite: Popular Posts', // Name
-                array( 'description' => __( 'Popular Posts Display Widget', 'polmo-lite' ), ) // Args
-            );
-        }
+add_action('widgets_init', 'polmo_lite_required_widgets');
+function polmo_lite_required_widgets(){
+    register_widget('Polmo_Lite_Popular_Post');
+}
 
-        /**
-        *
-        * Limit Popular Posts Text 
-        *
-        *
-        **/
-        function cText($text, $limit = 10, $sep='...') {
+class Polmo_Lite_Popular_Post extends WP_Widget {
 
-            $text = strip_tags($text);
-            $text = explode(' ',$text);
-            $sep = (count($text)>$limit) ? '...' : '';
-            $text=implode(' ', array_slice($text,0,$limit)) . $sep;
+    /* Widget setup */
+    function  __construct() {
 
-            return $text;
-        }
+        /* Widget settings */
+        $widget_ops = array( 
+            'classname'   => 'popular-posts-widget', 
+            'description' => esc_html__('A widget that show popular posts', 'polmo-lite') 
+        );
 
-        /**
-        * Front-end display of widget.
-        *
-        * @see WP_Widget::widget()
-        *
-        * @param array $args     Widget arguments.
-        * @param array $instance Saved values from database.
-        */
-        public function widget( $args, $instance ) {
-            extract( $args );
+        /* Widget control settings */
+        $control_ops = array( 
+            'width'   => 250, 
+            'height'  => 350, 
+            'id_base' => 'post-popular' 
+        );
 
-            $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Popular Posts', 'polmo-lite' ) : $instance['title'], $instance, $this->id_base);
-
-            $avatar_size = empty($instance['avatar_size']) ? 48 : $instance['avatar_size'];
-            $word_limit = empty($instance['word_limit']) ? 20 : $instance['word_limit'];
-            $count = empty($instance['count']) ? 5 : $instance['count'];
-
-            echo $before_widget;
-
-            echo $before_title . $title . $after_title;
-
-            ?>
+        /* Create the widget */
+        parent::__construct(
+            'post-popular', 
+            '&#x1F536; '. esc_html__('Polmo Lite', 'polmo-lite') . ' &raquo; ' . esc_html__('Popular Posts ', 'polmo-lite'),
+            $widget_ops, $control_ops
+        );
+    }
 
 
-              <div class="widget-details text-left">
+    /* Display the widget on the screen */
+    function widget($args, $instance) {
 
-                <?php $pc = new WP_Query('orderby=comment_count&posts_per_page=' . $count . '');  
-                if( $pc->have_posts() ){ while ($pc->have_posts()) { $pc->the_post(); ?>
-                    
-                    <article class="post type-post media">
+        $title = $instance['title'];
+        $num   = $instance['num'];
 
-                    <?php if ( has_post_thumbnail() ) { 
-                        $url = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), array(70,70) );
-                        ?>                        
-                        <div class="post-thumbnail media-left">
-                            <img class="img-circle" src="<?php echo esc_url( $url[0] ); ?>" alt="<?php the_title();?>" />
-                        </div><!-- /.post-thumbnail -->    
-                    <?php } ?>
-                      
-                      <div class="post-content media-body">
-                        <h5 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-                        <div class="post-meta">
-                          <div class="entry-date">
-                            <time datetime="<?php echo get_the_time('Y-m-j'); ?>">
-                                <?php echo get_the_time('M'); ?> <?php echo get_the_time('y'); ?>
-                            </time>
-                          </div><!-- /.entry-date -->
-                          <div class="comments">
-                            <span class="comments-icon"><i class="fa fa-comments"></i></span>
-                            <span class="count"><?php echo get_comments_number(); ?></span> <?php echo esc_html__("comments","polmo-lite");?>
-                          </div><!-- /.comments -->
-                        </div><!-- /.post-meta -->
-                      </div><!-- /.post-content -->
-                    </article>
+        echo polmo_lite_core_escape($args['before_widget']);
+        
+        if ( ! empty( $title ) ) echo polmo_lite_core_escape($args['before_title'] . apply_filters( 'widget_title', $title ). $args['after_title']);
+        
+        echo '<div class="widget-details text-left">'; 
 
-                <?php 
-                        }
-                        wp_reset_postdata();
-                    }
-                    
+        $popular_posts = '';
+        $temp = $popular_posts;
+        $popular_posts = new WP_Query(array(
+            'showposts' => intval($num), 
+            'orderby' => 'comment_count', 
+            'ignore_sticky_posts' => true
+        ));
+        if ($popular_posts->have_posts()) { while ($popular_posts->have_posts()) { $popular_posts->the_post(); 
+        ?>
+                <?php
+                $img_url = false;
+                $size = 'thumbnail';
+                $img_id = get_post_thumbnail_id($popular_posts->post->ID);
+                $photo = wp_get_attachment_image_src($img_id, $size);
+                $img_url = (isset($photo[0])) ? $photo[0] : '';
+                
+                $has_img = ($img_url) ? 'has-img' : '';
+                
                 ?>
 
-              </div><!-- /.widget-details -->
+                <article class="post type-post media">
+                    <?php if($img_url) { ?>
+                        <div class="entry-thumbnail media-left">
+                            <img width="75" src="<?php echo esc_url_raw($img_url); ?>" alt="<?php echo esc_attr($popular_posts->post->post_title); ?>"/>
+                        </div><!-- /.entry-thumbnail -->
+                    <?php } ?>
+                    <div class="entry-content media-body">
+                        <h4 class="entry-title">
+                            <a href="<?php echo get_permalink($popular_posts->post->ID); ?>">
+                                <?php echo the_title(); ?>          
+                            </a>
+                        </h4><!-- /.entry-title -->
+                        <div class="entry-meta">
+                            <time datetime="<?php echo get_the_modified_date( 'c' );?>">
+                                <?php echo get_the_time('j M Y', $popular_posts->post->ID); ?>      
+                            </time>
+                        </div><!-- /.entry-meta -->
+                    </div><!-- /.entry-content -->
+                </article><!-- /.type-post -->
 
 
-
-            <?php
-
-            echo $after_widget;
-        }
-
-        /**
-        * Sanitize widget form values as they are saved.
-        *
-        * @see WP_Widget::update()
-        *
-        * @param array $new_instance Values just sent to be saved.
-        * @param array $old_instance Previously saved values from database.
-        *
-        * @return array Updated safe values to be saved.
-        */
-        public function update( $new_instance, $old_instance ) {
-            $instance                   = array();
-            $instance['title']          = strip_tags( $new_instance['title'] );
-            $instance['avatar_size']    = strip_tags( $new_instance['avatar_size'] );
-            $instance['count']          = strip_tags( $new_instance['count'] );
-
-            return $instance;
-        }
-
-        /**
-        * Back-end widget form.
-        *
-        * @see WP_Widget::form()
-        *
-        * @param array $instance Previously saved values from database.
-        */
-        public function form( $instance ) {
-            $title = isset($instance['title']) ? esc_attr($instance['title']) : '';
-            $avatar_size = isset($instance['avatar_size']) ? esc_attr($instance['avatar_size']) : '48';
-            $count = isset($instance['count']) ? esc_attr($instance['count']) : '5';
-        ?>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html__( 'Title:', 'polmo-lite' ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
-        </p>
-        <p>
-            <label for="<?php echo $this->get_field_id( 'count' ); ?>"><?php esc_html__( 'Post Count:', 'polmo-lite' ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id( 'count' ); ?>" name="<?php echo $this->get_field_name( 'count' ); ?>" type="text" value="<?php echo esc_attr( $count ); ?>" />
-        </p>
-
-        <p>
-            <label for="<?php echo $this->get_field_id( 'avatar_size' ); ?>"><?php esc_html__( 'Avatar Size:', 'polmo-lite' ); ?></label> 
-            <input class="widefat" id="<?php echo $this->get_field_id( 'avatar_size' ); ?>" name="<?php echo $this->get_field_name( 'avatar_size' ); ?>" type="text" value="<?php echo esc_attr( $avatar_size ); ?>" />
-        </p>
         <?php
-        }
+            wp_reset_postdata();
+            wp_reset_query();
+        } }
 
-    } // class Polmo_Lite_Popular_Posts_Widget
+        $popular_posts = $temp;
+        echo '</div><!-- /.widget-details -->';
+        
+        echo polmo_lite_core_escape($args['after_widget']);
+    }
+
+
+    /* Update the widget settings */
+    function update($new_instance, $old_instance) {
+
+        $instance = $old_instance;
+
+        $instance['title'] = strip_tags($new_instance['title']);
+        $instance['num']   = strip_tags($new_instance['num']);
+
+        return $instance;
+    }
+
+
+    /* Displays the widget settings controls on the widget panel */
+    function form($instance) {
+
+        $defaults = array( 
+            'title' => __('Popular Posts', 'polmo-lite'), 
+            'num'   => '5',
+        );
+        $instance = wp_parse_args((array) $instance, $defaults); ?>
+
+        <p>
+            <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><?php _e('Title:', 'polmo-lite'); ?></label>
+            <input type="text" class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" value="<?php echo esc_attr($instance['title']); ?>" />
+        </p>
+        
+        <p>
+            <label for="<?php echo esc_attr($this->get_field_id('num')); ?>"><?php _e('Show Count', 'polmo-lite'); ?></label>
+            <input type="text" class="widefat" id="<?php echo esc_attr($this->get_field_id('num')); ?>" name="<?php echo esc_attr($this->get_field_name('num')); ?>" value="<?php echo esc_attr($instance['num']); ?>" />
+        </p>
+    <?php
+    }
 }
-
-
-// register Polmo Popular Posts widget
-function polmo_lite_register_popular_posts(){
-     register_widget( 'Polmo_Lite_Popular_Posts_Widget' );
-}
-add_action( 'widgets_init', 'polmo_lite_register_popular_posts');

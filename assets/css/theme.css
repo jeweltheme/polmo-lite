@@ -825,7 +825,7 @@ h1.navbar-brand {
 }
 .entry-title {
     display: inline-block;
-    font-size: 1em;
+    font-size: 1.9em;
     margin: 0px;
 }
 .blog.group-blog .entry-title {
@@ -1023,10 +1023,9 @@ h1.navbar-brand {
   z-index: -1;
   opacity: 0.2;
 } 
-.single-post .quote-author {
+.single-post .post-author {
   color: #fccccc;
   display: block;
-  font-family: 'Roboto';
   font-size: 14px;
   font-weight: 700;
   padding-top: 30px;
@@ -1182,10 +1181,6 @@ h1.navbar-brand {
 .sidebar {
     padding-left: 30px;
 }
-.sidebar .widget {
-    margin-bottom: 0;
-    padding-bottom: 85px;
-}
 
 .sidebar article {
     border: none;
@@ -1205,7 +1200,7 @@ h1.navbar-brand {
     font-size: 1em;
 }
 .sidebar .entry-title a {
-    color: #f44336;
+    color: #333;
     text-transform: capitalize;
     word-break: break-all;
 }
@@ -1247,6 +1242,10 @@ h1.navbar-brand {
     border: none;
     outline: 0;
 }
+.sidebar .social-list li{
+    padding-bottom: 10px;
+    padding-right: 10px;
+}
 .sidebar .social-list a {
     background: #fafafa;
     border-radius: 50%;
@@ -1255,6 +1254,7 @@ h1.navbar-brand {
     font-size: 1.5em;
     width: 40px;
     height: 40px;
+    border: 1px solid #f44336;
     text-align: center;
     line-height: 40px;
 }
@@ -1531,7 +1531,7 @@ footer .widget.widget_calendar a {
 }
 .widget .entry-title {
     color: #333;
-    margin: 0 0 15px;
+    margin: 0 0 5px;
 }
 .widget.widget_polmo-lite-popular-posts .post-content {
     margin: 0;
@@ -1694,17 +1694,17 @@ article.post:last-child {
 .textwidget p{
   padding-bottom: 20px;
 }
-aside.sidebar .widget {
+.sidebar .widget {
     margin-bottom: 3.5rem;
 }
-aside.sidebar .widget:last-child {
+.sidebar .widget:last-child {
     margin-bottom: 0;
 }
-aside .search-form {
+.widget .search-form {
     position: relative;
     z-index: 0;
 }
-aside .search-form:before {
+.widget .search-form:before {
     content: "\e090";
     color: #262626;
     font-family: 'simple-line-icons';
@@ -1717,7 +1717,7 @@ aside .search-form:before {
     position: absolute;
     text-align: center;
 }
-aside .search-form input {
+.widget .search-form input {
     background-color: #fff;
     border: 2px solid #e2e7ea;
     border-radius: 0;
@@ -1728,7 +1728,7 @@ aside .search-form input {
     height: 75px;
     padding: 15px 3.75rem 15px 1rem;
 }
-aside .search-form input[type="submit"] {
+.widget .search-form input[type="submit"] {
     background-color: transparent;
     border: none;
     font-size: 0;
@@ -1738,26 +1738,16 @@ aside .search-form input[type="submit"] {
     top: 0;
     position: absolute;
 }
-aside .widget-title {
+.widget .widget-title {
     color: #262626;
     font-size: 1.5rem;
     font-weight: 800;
-    margin-bottom: 2.8125rem;
+    margin-bottom: .8125rem;
     padding-bottom: 1.125rem;
     position: relative;
     text-transform: capitalize;
 }
-aside .widget-title:before {
-    content: '';
-    background-color: #ffd200;
-    height: 4px;
-    width: 60px;
-    left: 0;
-    bottom: 0;
-    position: absolute;
-}
-
-aside.sidebar .widget li {
+.sidebar .widget li {
     list-style: none;
 }
 .widget_archive li,.widget_categories li {
@@ -1796,7 +1786,7 @@ aside.sidebar .widget li {
 }
 .widget ul.children li:first-child,
 .widget ul.children li:last-child,
-aside.sidebar .widget li:last-child{
+.sidebar .widget li:last-child{
     border-bottom: none;
 }
 .widget .page_item_has_children ul.children li, 
@@ -1818,9 +1808,9 @@ aside.sidebar .widget li:last-child{
     font-size: 10px;
     margin-right: 3px;
 }
-aside.sidebar article.post {
+.sidebar article.post {
     border: none;
-    margin-bottom: 1rem;
+    margin-bottom: 1.75rem;
     padding: 0 !important;
 }
 aside.sidebar .entry-thumbnail {
@@ -1828,15 +1818,22 @@ aside.sidebar .entry-thumbnail {
     margin-bottom: 0;
     margin-right: 1rem;
 }
-aside.sidebar .entry-title {
-    font-size: 1.125rem;
-    font-weight: 800;
+.widget .entry-title {
+    font-size: 1.125rem !important;
+    font-weight: 600;
 }
-aside.sidebar .entry-meta {
+.widget .entry-title,
+.widget .entry-content{
+    padding-top: 0;
+}
+.widget .entry-content{
+    margin: 0;
+}
+.widget .entry-meta {
     color: #999;
     font-size: 1rem;
 }
-aside.sidebar .entry-meta i {
+.widget .entry-meta i {
     font-size: 1.25rem;
 }
 .widget_tag_cloud a {
@@ -1875,22 +1872,26 @@ aside.sidebar .entry-meta i {
 }
 
 /* Pages widget */
-aside.sidebar .widget li:first-child{
+.widget li:first-child{
     padding-top: 0;
 }
-aside.sidebar .widget ul li a{
+.widget ul li a{
     color: #4c4c4c;
 }
-aside.sidebar .widget ul li, 
-aside.sidebar .widget ol li{
+.sidebar .widget ul li, 
+.sidebar .widget ol li{
     color: #4c4c4c;
     font-size: 1em;
     list-style: none;
     background-size: 10px 1px;
     background-repeat: repeat-x;
     position: relative;
-    border-bottom: 2px #e2e7ea dashed;
     transition: all 0.3s ease;
+}
+
+.widget ul.social-list li, 
+.widget ul.social-list li{
+    display: inline-block;
 }
 
 /* Calendar Widget */

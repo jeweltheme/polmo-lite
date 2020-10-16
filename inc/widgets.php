@@ -43,4 +43,3 @@ add_action( 'widgets_init', 'polmo_lite_widgets_init' );
 require PROWPTHEME_PATH . 'widgets/class-widget-popular-posts.php';
 require PROWPTHEME_PATH . 'widgets/class-widget-recent-posts.php';
 require PROWPTHEME_PATH . 'widgets/class-widget-social-followers.php';
-require PROWPTHEME_PATH . 'widgets/class-widget-social-profile.php';
