@@ -161,43 +161,6 @@ function polmo_lite_content_width() {
 }
 add_action( 'after_setup_theme', 'polmo_lite_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
- */
-function polmo_lite_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Blog Sidebar', 'polmo-lite' ),
-		'id'            => 'blog-sidebar',
-		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );	
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Sidebar', 'polmo-lite' ),
-		'id'            => 'footer-sidebar',
-		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="widget col-sm-3 %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );	
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer Menu', 'polmo-lite' ),
-		'id'            => 'footer-menu',
-		'description'   => '',
-		'before_widget' => '<div id="%1$s" class="widget widget_menu %2$s">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
-}
-add_action( 'widgets_init', 'polmo_lite_widgets_init' );
-
-
 
 // Google Fonts
 function polmo_lite_google_fonts_url() {
@@ -207,7 +170,6 @@ function polmo_lite_google_fonts_url() {
     }
     return $font_url;
 }
-
 
 
 /**
@@ -253,7 +215,7 @@ function polmo_lite_scripts() {
 			// Blog Page
 
 			//CSS
-			wp_enqueue_style( 'bootstrap', JWCSS . 'bootstrap.min.css');			
+			wp_enqueue_style( 'polmo-bootstrap', JWCSS . 'bootstrap.min.css');
 			// wp_enqueue_style( 'font-awesome', JWCSS . 'font-awesome.min.css');			
 			// wp_enqueue_style( 'bxslider', JWCSS . 'jquery.bxslider.css');
 			wp_enqueue_style( 'polmo-theme', JWCSS . 'theme.css');
@@ -269,6 +231,7 @@ function polmo_lite_scripts() {
 			//JS
 			// wp_enqueue_script( 'modernizr', JWJS . 'modernizr-2.8.3-respond-1.4.2.min.js', array('jquery'), '', false );			
 			wp_enqueue_script( 'polmo-custom', JWJS . 'custom.min.js', array('jquery'), '', true );
+			wp_enqueue_script( 'polmo-bootstrap', JWJS . 'bootstrap.min.js');
 			// wp_enqueue_script( 'wow', JWJS . 'wow.js', array('jquery'), '', true );		
 			// wp_enqueue_script( 'waypoints', JWJS . 'waypoints.min.js', array('jquery'), '', true );
 			// wp_enqueue_script( 'jquery.bxslider', JWJS . 'jquery.bxslider.min.js', array('jquery'), '', true );
@@ -320,6 +283,9 @@ require get_template_directory() . '/inc/jetpack.php';
  * Widgets
  */
 require get_template_directory() . '/inc/widgets.php';
+
+// Navwalker
+require get_template_directory() . '/inc/class-wp-bootstrap-navwalker.php';
 
 /**
 * Quick Styles
@@ -412,3 +378,11 @@ require POLMO_LITE_PATH . '/inc/breadcrumb-trail.php';
 
 /* ProWP Theme Core */
 require PROWPTHEME_PATH . 'pwpt-core.php';
+
+
+
+function polmo_lite_add_menu_link_class($atts, $item, $args){
+    $atts['class'] = 'nav-link';
+    return $atts;
+}
+add_filter('nav_menu_link_attributes', 'polmo_lite_add_menu_link_class', 1, 3);

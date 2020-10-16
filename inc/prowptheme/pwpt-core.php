@@ -72,12 +72,6 @@ function polmo_lite_add_elementor_skins(){
 	require PROWPTHEME_PATH . 'compatibility/elementor/skins/class-prowptheme-blog-skin-6.php';
 }
 
-/**
- * Widgets
- */
-require PROWPTHEME_PATH . 'widgets/class-prowptheme-social.php';
-require PROWPTHEME_PATH . 'widgets/class-prowptheme-recent-posts.php';
-
 
 /**
  * Load Learnpress compatibility file.

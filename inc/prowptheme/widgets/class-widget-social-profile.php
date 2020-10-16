@@ -5,11 +5,23 @@
  * @package Polmo Lite
  */
 
-class ProWPTheme_Social extends WP_Widget {
+
+// register Polmo Popular Posts widget
+function polmo_lite_register_social_profile(){
+     register_widget( 'Polmo_Lite_Social_Profile' );
+}
+
+// register Polmo Popular Posts widget
+add_action( 'widgets_init', 'polmo_lite_register_social_profile');
+
+class Polmo_Lite_Social_Profile extends WP_Widget {
 
     function __construct() {
         $widget_ops = array( 'description' => __('Display your social profile', 'polmo-lite') );
-        parent::__construct( 'polmo_lite_social_widget', __('Polmo: Social Profile', 'polmo-lite'), $widget_ops );
+        parent::__construct( 
+            'polmo-lite-social-profile', 
+            __('Polmo Lite: Social Profile', 'polmo-lite'), 
+        $widget_ops );
     }
 
     function widget($args, $instance) {
@@ -73,3 +85,4 @@ class ProWPTheme_Social extends WP_Widget {
         <?php
     }
 }
+

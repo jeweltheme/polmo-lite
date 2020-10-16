@@ -7,7 +7,17 @@
  * @since 4.4.0
  */
 
-class ProWPTheme_Recent_Posts extends WP_Widget {
+
+// register Polmo Popular Posts widget
+function polmo_lite_register_recent_posts(){
+     register_widget( 'Polmo_Lite_Recent_Posts' );
+}
+
+// register Polmo Popular Posts widget
+add_action( 'widgets_init', 'polmo_lite_register_recent_posts');
+
+
+class Polmo_Lite_Recent_Posts extends WP_Widget {
 
 	/**
 	 * Sets up a new Recent Posts widget instance.
@@ -16,11 +26,11 @@ class ProWPTheme_Recent_Posts extends WP_Widget {
 	 */
 	public function __construct() {
 		$widget_ops = array(
-			'classname' => 'polmo_lite_recent_entries',
-			'description' => __( 'Recent posts with thumbnails.', 'polmo-lite' ),
-			'customize_selective_refresh' => true,
+			'classname' 					=> 'polmo_lite_recent_entries',
+			'description' 					=> __( 'Recent posts with thumbnails.', 'polmo-lite' ),
+			'customize_selective_refresh' 	=> true,
 		);
-		parent::__construct( 'polmo-lite-recent-posts', __( 'Polmo: Recent Posts', 'polmo-lite' ), $widget_ops );
+		parent::__construct( 'polmo-lite-recent-posts', __( 'Polmo Lite: Recent Posts', 'polmo-lite' ), $widget_ops );
 		$this->alt_option_name = 'polmo_lite_recent_entries';
 	}
 

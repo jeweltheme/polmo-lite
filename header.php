@@ -46,15 +46,15 @@ $plmo_lite_single_layout    = polmo_lite_single_layout();
 					?>
 			</div>
 
-
-			<nav id="main-menu" class="collapse navbar-collapse main-menu pull-right" role="navigation" aria-label="<?php _e( 'Main Menu', 'polmo-lite' ); ?>">
+			<nav id="main-menu" class="collapse navbar-collapse main-menu pull-right" role="navigation" aria-label="	<?php _e( 'Main Menu', 'polmo-lite' ); ?>">
 				<?php 
-				wp_nav_menu( array(
+					wp_nav_menu( array(
 						'menu'              => 'primary',
 						'theme_location'    => 'primary',
 						'depth'             => 4,
 						'container'         => 'ul',
-						'fallback_cb'       => 'wp_page_menu',
+						'walker'            => new WP_Bootstrap_Navwalker(),
+                        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
 						'container_class'   => '',
 						'container_id'    	=> 'main-menu',
 						'menu_class'        => 'navbar-nav pwpt-main-menu',
@@ -69,11 +69,10 @@ $plmo_lite_single_layout    = polmo_lite_single_layout();
 	</header><!-- /#masthead -->
 
 <?php
-$blog_header_section = Polmo_Lite_Kirki::get_option('polmo_lite','blog_header_section');
-$polmo_lite_general_blog_title = Polmo_Lite_Kirki::get_option('polmo_lite','polmo_lite_general_blog_title');
-$polmo_lite_general_blog_desc = Polmo_Lite_Kirki::get_option('polmo_lite','polmo_lite_general_blog_desc');
-$polmo_lite_banner_image = Polmo_Lite_Kirki::get_option('polmo_lite','polmo_lite_banner_image');
-
+$blog_header_section 			= Polmo_Lite_Kirki::get_option('polmo_lite','blog_header_section');
+$polmo_lite_general_blog_title 	= Polmo_Lite_Kirki::get_option('polmo_lite','polmo_lite_general_blog_title');
+$polmo_lite_general_blog_desc 	= Polmo_Lite_Kirki::get_option('polmo_lite','polmo_lite_general_blog_desc');
+$polmo_lite_banner_image 		= Polmo_Lite_Kirki::get_option('polmo_lite','polmo_lite_banner_image');
 
 if( true == $blog_header_section){ ?>
 
