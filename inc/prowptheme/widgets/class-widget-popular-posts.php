@@ -14,12 +14,13 @@ function polmo_lite_required_widgets(){
 
 class Polmo_Lite_Popular_Post extends WP_Widget {
 
+    public $widget_class = 'popular-posts-widget';
     /* Widget setup */
     function  __construct() {
 
         /* Widget settings */
         $widget_ops = array( 
-            'classname'   => 'popular-posts-widget', 
+            'classname'   => $this->widget_class,
             'description' => esc_html__('A widget that show popular posts', 'polmo-lite') 
         );
 
@@ -42,19 +43,18 @@ class Polmo_Lite_Popular_Post extends WP_Widget {
     /* Display the widget on the screen */
     function widget($args, $instance) {
 
-        $title = $instance['title'];
-        $num   = $instance['num'];
+        $title = isset($instance['title'])?$instance['title']:'';
 
         echo polmo_lite_core_escape($args['before_widget']);
         
         if ( ! empty( $title ) ) echo polmo_lite_core_escape($args['before_title'] . apply_filters( 'widget_title', $title ). $args['after_title']);
         
-        echo '<div class="widget-details text-left">'; 
+        echo '<div class="widget-details text-left ' . $this->widget_class . '">'; 
 
         $popular_posts = '';
         $temp = $popular_posts;
         $popular_posts = new WP_Query(array(
-            'showposts' => intval($num), 
+            'showposts' => intval($instance['num']), 
             'orderby' => 'comment_count', 
             'ignore_sticky_posts' => true
         ));
@@ -74,7 +74,7 @@ class Polmo_Lite_Popular_Post extends WP_Widget {
                 <article class="post type-post media">
                     <?php if($img_url) { ?>
                         <div class="entry-thumbnail media-left">
-                            <img width="75" src="<?php echo esc_url_raw($img_url); ?>" alt="<?php echo esc_attr($popular_posts->post->post_title); ?>"/>
+                            <img width="60" src="<?php echo esc_url_raw($img_url); ?>" alt="<?php echo esc_attr($popular_posts->post->post_title); ?>"/>
                         </div><!-- /.entry-thumbnail -->
                     <?php } ?>
                     <div class="entry-content media-body">

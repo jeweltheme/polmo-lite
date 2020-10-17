@@ -32,7 +32,7 @@ if(!( class_exists('Polmo_Lite_Socials_Follow_Us') )){
         public function widget( $args, $instance ) {
             extract( $args );
 
-            $title = apply_filters('widget_title', empty($instance['title']) ? __( 'Follow Us', 'polmo-lite' ) : $instance['title'], $instance, $this->id_base);
+            $title = empty($instance['title'] !="") ? "" : $instance['title'];
 
             $facebook = empty($instance['facebook']) ? '' : $instance['facebook'];
             $twitter = empty($instance['twitter']) ? '' : $instance['twitter'];
