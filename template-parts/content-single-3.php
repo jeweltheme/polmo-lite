@@ -54,7 +54,7 @@ $polmo_lite_layout      = polmo_lite_blog_layout();
         <?php } ?>  
 
         <div class="author-bio-container media">
-        	<div class="author-avatar media-left pull-left">
+        	<div class="author-avatar media-left float-left">
         		<?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
         	</div><!-- /.author-avatar -->
         	<div class="author-details media-body">

@@ -43,7 +43,7 @@
 			</div>
 
 
-			<nav id="main-menu" class="navbar-collapse pull-right">
+			<nav id="main-menu" class="navbar-collapse float-right">
 				<ul class="nav navbar-nav">
 					<li class="active"><a href="#main-slider"><?php echo esc_html('Home','polmo-lite');?></a></li>
 					<li><a href="#services"><?php echo esc_html('Services','polmo-lite');?></a></li>

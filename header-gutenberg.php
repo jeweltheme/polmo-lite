@@ -44,7 +44,7 @@
 			</div>
 
 
-			<nav id="main-menu" class="navbar-collapse pull-right">
+			<nav id="main-menu" class="navbar-collapse float-right">
 				<?php 
 				wp_nav_menu( array(
 					'menu'              => 'primary',

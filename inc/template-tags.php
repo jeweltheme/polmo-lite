@@ -369,7 +369,7 @@ if(!function_exists('polmo_lite_comment')){
             			<span class="author-name">
             				<?php printf( '<span class="name">%1$s</span>', get_comment_author_link()); ?>
             			</span>
-            			<span class="comment-reply pull-right">
+            			<span class="comment-reply float-right">
             				<?php comment_reply_link( array_merge( $args, array( 'reply_text' => wp_kses( 'Reply', 'polmo-lite' ), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
             			</span> 
             		</div><!-- /.comment-meta -->

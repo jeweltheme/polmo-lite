@@ -98,8 +98,8 @@ if ( post_password_required() ) {
 	ob_start();
 	comment_form( $comments_args);
 	//echo str_replace('id="commentform" class="comment-form"',ob_get_clean());
-	echo str_replace('class="cbtn submit pull-right"','class="comment-form row"',ob_get_clean());
-	echo str_replace('class="btn submit pull-right"','class="btn submit pull-right"',ob_get_clean());	
+	echo str_replace('class="cbtn submit float-right"','class="comment-form row"',ob_get_clean());
+	echo str_replace('class="btn submit float-right"','class="btn submit float-right"',ob_get_clean());	
 	?>
 
 

@@ -57,7 +57,7 @@ $header_scroll = get_theme_mod('header_scroll','default');
                 </button>
 			</div>
 
-			<nav id="main-menu" class="collapse navbar-collapse main-menu pull-right" role="navigation" aria-label="	<?php _e( 'Main Menu', 'polmo-lite' ); ?>">
+			<nav id="main-menu" class="collapse navbar-collapse main-menu float-right" role="navigation" aria-label="	<?php _e( 'Main Menu', 'polmo-lite' ); ?>">
 				<?php 
 					wp_nav_menu( array(
 						'menu'              => 'primary',
