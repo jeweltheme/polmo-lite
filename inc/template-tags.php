@@ -264,7 +264,7 @@ function polmo_lite_post_meta(){
 		<div class="entry-meta">
 			
 			<?php if ( $index_hide_author == '' ){ ?>
-				<div class="author pull-left">
+				<div class="author float-left">
 					<?php echo sprintf(
 						esc_html_x( 'by %s', 'post author', 'polmo-lite' ),
 						'<span class="author-name"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
@@ -311,7 +311,7 @@ function polmo_lite_get_avatar_url($get_avatar){
 
 function polmo_lite_author_bio(){ ?>
     <div class="author-bio-container media">
-        <div class="author-avatar media-left pull-left">
+        <div class="author-avatar media-left float-left">
             <img class="img-circle media-boject" src="<?php echo get_avatar_url(get_the_author_meta( 'ID' ), 80 ); ?>" alt="Author Avatar">
         </div><!-- /.author-avatar -->
         <div class="author-details media-body">
@@ -360,7 +360,7 @@ if(!function_exists('polmo_lite_comment')){
 
         <li class="comment parent media" id="li-comment-<?php comment_ID(); ?>">
             <div class="comment-top">
-            	<div class="comment-author media-left pull-left">
+            	<div class="comment-author media-left float-left">
             		<img class="img-circle media-object" src="<?php echo get_avatar_url(get_the_author_meta( 'ID' ), 65 ); ?>" alt="Author Comment Avatar">
             	</div><!-- /.comment-author -->
 

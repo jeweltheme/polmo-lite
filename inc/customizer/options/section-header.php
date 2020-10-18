@@ -13,13 +13,36 @@ Polmo_Lite_Kirki::add_section( 'polmo_lite_section_menu', array(
 ) );
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'type'        => 'radio',
+	'settings'    => 'header_color',
+	'label'       => __( 'Header Variation', 'polmo-lite' ),
+	'section'     => 'polmo_lite_section_menu',
+	'default'     => 'default',
+	'choices'     => array(
+		'default' 				=> esc_attr__( 'Default Header', 'polmo-lite' ),
+		'bg-light' 				=> esc_attr__( 'Light Header', 'polmo-lite' ),
+		'bg-dark' 				=> esc_attr__( 'Dark Header', 'polmo-lite' ),
+	),
+) );
+Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
+	'type'        => 'radio',
+	'settings'    => 'header_scroll',
+	'label'       => __( 'Scroll Type', 'polmo-lite' ),
+	'section'     => 'polmo_lite_section_menu',
+	'default'     => 'default',
+	'choices'     => array(
+		'default' 				=> esc_attr__( 'Scroll', 'polmo-lite' ),
+		'fixed-top' 			=> esc_attr__( 'Fixed Top', 'polmo-lite' ),
+	),
+) );
+Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
+	'type'        => 'radio',
 	'settings'    => 'menu_type',
 	'label'       => __( 'Menu type', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_menu',
 	'default'     => 'header-default',
 	'choices'     => array(
 		'header-default' 		=> esc_attr__( 'Default Header', 'polmo-lite' ),
-		'header-transparent' 	=> esc_attr__( 'Transparent Header', 'polmo-lite' )
+		'transparent-header' 	=> esc_attr__( 'Transparent Header', 'polmo-lite' ),
 	),
 ) );
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
