@@ -36,25 +36,7 @@ $header_scroll = get_theme_mod('header_scroll','default');
 			<!-- Brand and toggle get grouped for better mobile display -->
 
 			<div class="navbar-header">
-
-				<?php polmo_lite_the_custom_logo(); ?>
-
-				<?php if ( is_front_page() && is_home() ) : ?>
-					<h1 class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<h1 class="navbar-brand"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php endif; 
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; ?></p>
-				<?php endif;
-				?>
-
-				<button class="navbar-toggler" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon">
-                        <i class="fa fa-bars">+</i>
-                    </span>
-                </button>
+				<?php polmo_lite_brand_logo(); ?>
 			</div>
 
 			<nav id="main-menu" class="collapse navbar-collapse main-menu float-right" role="navigation" aria-label="	<?php _e( 'Main Menu', 'polmo-lite' ); ?>">

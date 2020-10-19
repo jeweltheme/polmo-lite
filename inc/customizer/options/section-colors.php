@@ -160,27 +160,6 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 		),
 	),
 ) );
-// Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
-// 	'type'        => 'color',
-// 	'settings'    => 'color_mt1_top_menu_items_sticky',
-// 	'label'       => esc_attr__( 'Top level menu items (sticky)', 'polmo-lite' ),
-// 	'section'     => 'polmo_lite_section_colors_header',
-// 	'default'     => '#191919',
-//     'required'  => array(
-//         array(
-//             'setting'  => 'menu_type',
-//             'value'    => 'header-default',
-//             'operator' => '==',
-//         ),
-// 	),
-// 	'transport'	 => 'auto',
-// 	'output' => array(
-// 		array(
-// 			'element'  => '.header-default .sticky-wrapper.is-sticky #main-menu a, .header-default .sticky-wrapper.is-sticky .fa-search',
-// 			'property' => 'color',
-// 		),
-// 	),
-// ) );
 
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'type'        => 'color',
@@ -188,13 +167,6 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'label'       => esc_attr__( 'Header Background color', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_colors_header',
 	'default'     => '',
-    'required'  => array(
-        array(
-            'setting'  => 'menu_type',
-            'value'    => 'header-default',
-            'operator' => '==',
-        ),
-	),
 	'choices'     => array(
 		'alpha' => true,
 	),	
@@ -203,35 +175,10 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 		array(
 			'element'  => '.masthead',
 			'property' => 'background-color',
+			// 'suffix' => ' !important',
 		),
 	),
 ) );
-// Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
-// 	'type'        => 'color',
-// 	'settings'    => 'color_mt1_bg_color_sticky',
-// 	'label'       => esc_attr__( 'Background color (sticky)', 'polmo-lite' ),
-// 	'section'     => 'polmo_lite_section_colors_header',
-// 	'default'     => '#ffffff',
-//     'required'  => array(
-//         array(
-//             'setting'  => 'menu_type',
-//             'value'    => 'header-default',
-//             'operator' => '==',
-//         ),
-// 	),
-// 	'choices'     => array(
-// 		'alpha' => true,
-// 	),	
-// 	'transport'	 => 'auto',
-// 	'output' => array(
-// 		array(
-// 			'element'  => '.header-default .is-sticky .site-header',
-// 			'property' => 'background-color',
-// 		),
-// 	),
-// ) );
-
-
 
 //Submenu
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
@@ -317,20 +264,6 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 		),
 	),
 ) );
-// Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
-// 	'type'        => 'color',
-// 	'settings'    => 'color_meta_cat_bg',
-// 	'label'       => esc_attr__( 'Categories (single and archives)', 'polmo-lite' ),
-// 	'section'     => 'polmo_lite_section_colors_blog',
-// 	'default'     => '#fff',
-// 	'transport'	 => 'auto',
-// 	'output' => array(
-// 		array(
-// 			'element'  => '.blog-posts .cat-links',
-// 			'property' => 'background-color',
-// 		),
-// 	),
-// ) );
 Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'type'        => 'color',
 	'settings'    => 'color_meta_text',

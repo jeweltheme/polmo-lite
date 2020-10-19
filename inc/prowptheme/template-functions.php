@@ -376,3 +376,43 @@ function polmo_lite_core_escape($str = '', $type = '', $context = ''){
     
     return $str;
 }
+
+
+
+// Navbar Brand Logo
+function polmo_lite_brand_logo(){ 
+
+    if( function_exists( 'the_custom_logo' ) && has_custom_logo() ){
+        polmo_lite_the_custom_logo();
+    } else{ ?>
+    	
+		<?php if ( is_front_page() && is_home() ) : ?>
+			<h1 class="navbar-brand">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>
+				</a>
+			</h1>
+		<?php else : ?>
+			<h1 class="navbar-brand">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>		
+				</a>
+			</h1>
+		<?php endif; 
+		$description = get_bloginfo( 'description', 'display' );
+		if ( $description || is_customize_preview() ) : ?>
+			<p class="site-description pt-2">
+				<?php echo $description; ?>		
+			</p>
+		<?php endif;
+		?>
+
+		<button class="navbar-toggler" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon">
+                <i class="fa fa-bars">+</i>
+            </span>
+        </button>
+
+
+    <?php }
+}

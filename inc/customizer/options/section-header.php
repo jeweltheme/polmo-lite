@@ -18,8 +18,8 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'section'     => 'polmo_lite_section_menu',
 	'default'     => 'default',
 	'choices'     => array(
-		'default' 				=> esc_attr__( 'Default Header', 'polmo-lite' ),
-		'bg-light' 				=> esc_attr__( 'Light Header', 'polmo-lite' ),
+		'header-default' 		=> esc_attr__( 'Default Header', 'polmo-lite' ),
+		'bg-white' 				=> esc_attr__( 'Light Header', 'polmo-lite' ),
 		'bg-dark' 				=> esc_attr__( 'Dark Header', 'polmo-lite' ),
 	),
 ) );

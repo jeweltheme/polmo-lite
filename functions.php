@@ -52,12 +52,21 @@ function polmo_setup() {
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
-		add_theme_support( 'custom-logo', array(
-			'height'      => 100,
-			'width'       => 35,
-			'flex-height' => true,
-			) );
 
+		/**
+		 * Add support for core custom logo.
+		 *
+		 * @link https://codex.wordpress.org/Theme_Logo
+		 */
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 250,
+				'width'       => 60,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 
 		add_editor_style();
 
@@ -188,7 +197,7 @@ function polmo_lite_scripts() {
 
 	//JS
 	wp_enqueue_script( 'polmo-custom', JWJS . 'custom.min.js', array('jquery'), '', true );
-	wp_enqueue_script( 'polmo-bootstrap', JWJS . 'bootstrap.min.js');
+	wp_enqueue_script( 'bootstrap', JWJS . 'bootstrap.min.js', array('jquery'), '', true );
 
 	wp_enqueue_script( 'polmo-lite-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
@@ -197,8 +206,33 @@ function polmo_lite_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+
 }
 add_action( 'wp_enqueue_scripts', 'polmo_lite_scripts' );
+
+
+// Script Conflicting issues
+add_action( 'wp_print_styles', 'polmo_lite_dequeue_styles' );
+add_action( 'wp_print_scripts', 'polmo_lite_dequeue_scripts' );
+
+//Dequeue Styles
+function polmo_lite_dequeue_styles() {
+    
+    // conflicting issue with Master Addons
+	if ( is_plugin_active( 'master-addons/master-addons.php' ) ) {
+		wp_dequeue_style('bootstrap');
+	}
+}
+
+//Dequeue JavaScripts
+function polmo_lite_dequeue_scripts() {
+    wp_dequeue_script( 'modernizr-js' );
+        wp_deregister_script( 'modernizr-js' );
+    wp_dequeue_script( 'project-js' );
+        wp_deregister_script( 'project-js' );
+}
+
 
 
 /**

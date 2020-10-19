@@ -174,11 +174,11 @@ button:focus {
 /* 3 -------- Header Styles ---------*/
 .custom-logo-link {
     display: block;
-    padding-top: 10px;
 }
 
 .custom-logo {
     max-width: 180px;
+    height: 60px;
 }
 .site-description {
     color: #686868;
@@ -189,18 +189,24 @@ button:focus {
     line-height: 1.0769230769;
     margin: 0.538461538em 0 0;
 }
+.header-default{
+    background: #fff;
+}
 .masthead {
-    background: rgba(0, 0, 0, 0.8);
     border: none;
     border-radius: 0px;
     box-shadow: none;
     margin: 0px;
-    padding: 0;
+    padding: 0px;
+    height: 80px;
     z-index: 99999;
 }
 .navbar-brand {
     margin: 0;
     padding: 0px 15px 0 0;
+}
+h1.navbar-brand{
+    font-size: 20px !important;
 }
 .navbar-brand a{
     color: #333;
@@ -290,7 +296,7 @@ header .navbar-nav>li>a:hover{
         height: auto;
         opacity: 1;
         overflow: visible;
-        top: 100%;
+        top: 52px;
     }
     .navbar-nav li  .sub-menu:hover .sub-menu,
     .navbar-nav li  .sub-menu:focus .sub-menu,
@@ -357,7 +363,8 @@ header .navbar-nav>li>a:hover{
         line-height: 30px;
     }
 }
-.logged-in.admin-bar header{
+
+.logged-in.admin-bar header.fixed-top {
     top: 32px;
 }
 
@@ -369,7 +376,7 @@ header .navbar-nav>li>a:hover{
 /* / Transparent Header / */
 
 .masthead.transparent-header {
-    background-color: transparent;
+    background-color: transparent !important;
 }
 .masthead.transparent-header .navbar-nav>li>a {
     color: #000;
@@ -1905,7 +1912,7 @@ aside.sidebar .entry-thumbnail {
     margin-right: 1rem;
 }
 .widget .entry-title {
-    font-size: 1.125rem !important;
+    font-size: 1rem !important;
     font-weight: 600;
 }
 .widget .entry-title,
