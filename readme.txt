@@ -77,48 +77,17 @@ Released under the MIT license https://github.com/twbs/bootstrap/blob/master/LIC
 Source: http://getbootstrap.com
 
 
-iv) BxSlider files
-=======================
-bxSlider, Copyright 2014 Steven Wanderski
-Released under the MIT license https://github.com/stevenwanderski/bxslider-4/blob/master/LICENSE.md
-Source: http://bxslider.com/
 
-v) Waypoints file
-====================================
-Waypoints, Copyright (c) 2011-2014 Caleb Troughton
-Released under the MIT license https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
-Source: https://github.com/imakewebthings/waypoints
+/** IMAGES **/
+
+Image for theme screenshot, Copyright unknown camera
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pxhere.com/en/photo/559565
 
 
-vi) wow.js files
-====================================
-Released under GPLv3 license https://github.com/matthieua/WOW/blob/master/README.md
-Source: https://github.com/matthieua/WOW
+Logo Image on the theme, Copyright self-created
+License: GPLv2
 
-
-vii) Magnific Popup Files
-====================================
-Magnific Popup, Created by Dmitry Semenov
-Released under the MIT license https://github.com/dimsemenov/Magnific-Popup/blob/master/README.md
-Source - https://github.com/dimsemenov/Magnific-Popup
-	
-
-viii) Animate CSS
-============
-Animate CSS 
-Licensed under the MIT license. (http://opensource.org/licenses/MIT)
-Main Source - http://daneden.me/animate
-Github - https://github.com/daneden/animate.css
-
-
-ix) Images
-============
-https://www.flickr.com/photos/jemeeroy/25704310385 - Public Domain CC0 License
-https://www.flickr.com/photos/jemeeroy/25678175236 - Public Domain CC0 License
-https://www.flickr.com/photos/jemeeroy/25704237195 - Public Domain CC0 License
-https://www.flickr.com/photos/jemeeroy/25073716614 - Public Domain CC0 License
-https://www.flickr.com/photos/jemeeroy/25073717184 - Public Domain CC0 License
-https://www.flickr.com/photos/jemeeroy/25073717594 - Public Domain CC0 License
 
 
 

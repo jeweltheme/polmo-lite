@@ -2,7 +2,7 @@
 /**
  * Footer Customizer panel
  *
- * @package Brooklyn Lite
+ * @package Polmo Lite
  */
 
 

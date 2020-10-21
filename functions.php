@@ -33,7 +33,7 @@ if (!defined('PROWPTHEME_THEME_URI')) {
 	define( 'PROWPTHEME_THEME_URI', get_template_directory_uri() . '/inc/prowptheme/');
 }
 
-if ( ! function_exists( 'polmo_setup' ) ) {
+if ( ! function_exists( 'polmo_lite_setup' ) ) {
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -41,7 +41,7 @@ if ( ! function_exists( 'polmo_setup' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function polmo_setup() {
+function polmo_lite_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -148,15 +148,8 @@ function polmo_setup() {
 
 
 	}
-} // polmo_setup
-add_action( 'after_setup_theme', 'polmo_setup' );
-
-
-
-function polmo_excerpt( $length ) {
-	return $length;
-}
-add_filter( 'excerpt_length', 'polmo_excerpt', 999 );
+} // polmo_lite_setup
+add_action( 'after_setup_theme', 'polmo_lite_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -206,10 +199,8 @@ function polmo_lite_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
-
 }
-add_action( 'wp_enqueue_scripts', 'polmo_lite_scripts' );
+add_action( 'wp_enqueue_scripts', 'polmo_lite_scripts', 999 );
 
 
 // Script Conflicting issues

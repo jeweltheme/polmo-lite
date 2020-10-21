@@ -22,15 +22,11 @@ $plmo_lite_single_layout    = polmo_lite_single_layout();
 <body <?php body_class(); ?>>
 
 <?php 
-// $header_color = Polmo_Lite_Kirki::get_option('polmo_lite','header_color');
-// $header_scroll = Polmo_Lite_Kirki::get_option('polmo_lite','header_scroll');
-
 $header_color = get_theme_mod( 'header_color', 'default' );
 $menu_type = get_theme_mod( 'menu_type', 'header-default' );
 $header_scroll = get_theme_mod('header_scroll','default');
 ?>
 
-<!-- fixed-top, transparent-header, bg-light, bg-dark -->
 	<header id="masthead" class="masthead navbar navbar-expand-md <?php echo esc_attr($header_color);?> <?php echo esc_attr($header_scroll);?> <?php echo esc_attr($menu_type);?>">
 		<div class="<?php echo esc_attr( polmo_lite_menu_container() ); ?>">
 			<!-- Brand and toggle get grouped for better mobile display -->

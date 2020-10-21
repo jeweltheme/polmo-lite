@@ -1338,9 +1338,9 @@ header .navbar-nav>li>a:hover{
     padding-right: 10px;
 }
 .social-list a {
-    background: #fafafa;
+    background: #f44336;
     border-radius: 50%;
-    color: #f44336;
+    color: #fafafa;
     display: inline-block;
     font-size: 1.5em;
     width: 40px;
@@ -1350,8 +1350,8 @@ header .navbar-nav>li>a:hover{
     line-height: 40px;
 }
 .social-list a:hover {
-    background: #f44336;
-    color: #fff !important;
+    background: #fafafa;
+    color: #f44336 !important;
 }
 .categories-list .form-control {
     background: #fff;
