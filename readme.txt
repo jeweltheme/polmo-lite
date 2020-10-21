@@ -3,6 +3,8 @@ Theme Name: Polmo Lite
 Theme URI: https://prowptheme.com/themes/polmo-business-wordpress-theme/
 Author: Litonice13
 Author URI: https://master-addons.com
+Tested up to: 5.5.1
+Requires PHP: 5.6
 Description: Polmo Lite is Responsive, clean and fully customizable Premium Quality WordPress Theme with Dynamic Layout options, logo upload options, social media links Supports,  modern looking home page with carasoel, slideshow and tiles options, custom menus, unlimited colors, unlimited background color options. Theme is fully loaded with premium quality features. It is a perfect theme for Business/Corporate and Professional websites, Portfolio websites, internet marketers, agencies, affiliate marketers, news, review agencies etc.  
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html

@@ -292,7 +292,7 @@ if(!( function_exists('polmo_lite_pagination') )){
 			echo '<nav class="page-navigation"><ul class="pagination">';
 
 			if($paged > 1 && $paged > $range+1 && $showitems < $pages){
-				echo '<li class="page-item"><a href="'.get_pagenum_link(1).'" class="page-link prev"><i class="fa fa-arrow-left"></i> ' . esc_html__('Prev','brooklyn-lite') . '</a></li>';
+				echo '<li class="page-item"><a href="'.get_pagenum_link(1).'" class="page-link prev"><i class="fa fa-arrow-left"></i> ' . esc_html__('Prev','polmo-lite') . '</a></li>';
 			}
 
 			for ($i=1; $i <= $pages; $i++)
@@ -304,7 +304,7 @@ if(!( function_exists('polmo_lite_pagination') )){
 			}
 
 			if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages){
-				echo '<li class="page-item"><a href="'.get_pagenum_link($pages).'" class="page-link next">' . esc_html__('Next','brooklyn-lite') . ' <i class="fa fa-arrow-right"></i></a></li>';
+				echo '<li class="page-item"><a href="'.get_pagenum_link($pages).'" class="page-link next">' . esc_html__('Next','polmo-lite') . ' <i class="fa fa-arrow-right"></i></a></li>';
 			}
 
 			echo "</ul></nav>";
@@ -322,16 +322,16 @@ function polmo_lite_footer_credit(){
     if($copyright_text ==''){ ?>
 
 		<div class="copy-right float-left">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'brooklyn-lite' ) ); ?>">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'polmo-lite' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'brooklyn-lite' ), 'WordPress' );
+				printf( esc_html__( 'Proudly powered by %s', 'polmo-lite' ), 'WordPress' );
 				?>
 			</a>
 			<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %2$s by %1$s.', 'brooklyn-lite' ), 'ProWPTheme', '<a href="' . esc_url('https://prowptheme.com/themes/polmo-business-wordpress-theme/') . '" rel="nofollow" target="_blank">Polmo Lite</a>' );
+				printf( esc_html__( 'Theme: %2$s by %1$s.', 'polmo-lite' ), 'ProWPTheme', '<a href="' . esc_url('https://prowptheme.com/themes/polmo-business-wordpress-theme/') . '" rel="nofollow" target="_blank">Polmo Lite</a>' );
 				?>
 		</div><!-- .site-info -->
 

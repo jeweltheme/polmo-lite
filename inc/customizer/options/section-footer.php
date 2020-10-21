@@ -19,7 +19,7 @@ Polmo_Lite_Kirki::add_field( 'polmo_lite', array(
 	'label'    => esc_html__( 'Copyright Text', 'polmo-lite' ),
 	'description' => esc_html__( 'Copyright Text', 'polmo-lite' ),
 	'section'     => 'polmo_lite_section_footer',
-	'default'     => __('&copy; <a href="https://prowptheme.com/themes/polmo-business-wordpress-theme/" rel="nofollow" target="_blank">Polmo Lite</a> ' . date_i18n('Y') .'. All Rights Reserved by <a href="https://prowptheme.com/" rel="nofollow" target="_blank">ProWPTheme</a>','polmo-lite'),
+	'default'     => sprintf('&copy; <a href="https://prowptheme.com/themes/polmo-business-wordpress-theme/" rel="nofollow" target="_blank">Polmo Lite</a> ' . date_i18n('Y') .'. All Rights Reserved by <a href="https://prowptheme.com/" rel="nofollow" target="_blank">ProWPTheme</a>','polmo-lite'),
 	'sanitize_callback' => 'sanitize_text_field',
 	'priority'    => 10,
 ) );

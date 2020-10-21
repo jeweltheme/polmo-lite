@@ -20,7 +20,7 @@ $plmo_lite_single_layout    = polmo_lite_single_layout();
 </head>
 
 <body <?php body_class(); ?>>
-
+<?php wp_body_open(); ?>
 <?php 
 $header_color = get_theme_mod( 'header_color', 'default' );
 $menu_type = get_theme_mod( 'menu_type', 'header-default' );

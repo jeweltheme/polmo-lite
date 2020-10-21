@@ -19,7 +19,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-
+<?php wp_body_open(); ?>
 	<header id="masthead" class="masthead navbar navbar-default navbar-fixed-top">
 		<div class="container">
 			

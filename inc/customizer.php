@@ -41,7 +41,7 @@ function polmo_lite_customize_register( $wp_customize ) {
 
 
 	$wp_customize->add_section( 'theme_detail', array(
-        'title'    => __( 'About Theme', 'polmio-lite' ),
+        'title'    => __( 'About Theme', 'polmo-lite' ),
         'priority' => 9
     ) );
 
@@ -55,7 +55,7 @@ function polmo_lite_customize_register( $wp_customize ) {
     $wp_customize->add_panel( 'polmo_lite_panel', array(
         'priority' => 10,
         'capability' => 'edit_theme_options',
-        'title' => __( 'Polmo Theme Options', 'polmio-lite' ),
+        'title' => __( 'Polmo Theme Options', 'polmo-lite' ),
     ) );
 
 

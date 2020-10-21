@@ -203,9 +203,6 @@ function polmo_lite_scripts() {
 add_action( 'wp_enqueue_scripts', 'polmo_lite_scripts', 999 );
 
 
-// Script Conflicting issues
-add_action( 'wp_print_styles', 'polmo_lite_dequeue_styles' );
-add_action( 'wp_print_scripts', 'polmo_lite_dequeue_scripts' );
 
 //Dequeue Styles
 function polmo_lite_dequeue_styles() {
@@ -214,14 +211,6 @@ function polmo_lite_dequeue_styles() {
 	if ( is_plugin_active( 'master-addons/master-addons.php' ) ) {
 		wp_dequeue_style('bootstrap');
 	}
-}
-
-//Dequeue JavaScripts
-function polmo_lite_dequeue_scripts() {
-    wp_dequeue_script( 'modernizr-js' );
-        wp_deregister_script( 'modernizr-js' );
-    wp_dequeue_script( 'project-js' );
-        wp_deregister_script( 'project-js' );
 }
 
 
